@@ -184,9 +184,9 @@
     
       <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
+    
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
@@ -213,9 +213,9 @@
     
       <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
+    
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
@@ -581,9 +581,9 @@
       <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="最近公共祖先" scheme="http://answerend42.github.io/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
-    
       <category term="模板" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="最近公共祖先" scheme="http://answerend42.github.io/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
     
   </entry>
   
