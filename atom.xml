@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Answerend42的Blog</title>
+  <title>answerend42的Blog</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://answerend42.gitee.io/"/>
+  <link href="http://answerend42.github.io/"/>
   <updated>2020-10-10T13:56:09.563Z</updated>
-  <id>http://answerend42.gitee.io/</id>
+  <id>http://answerend42.github.io/</id>
   
   <author>
-    <name>Answerend42</name>
+    <name>answerend42</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>初赛复习集合</title>
-    <link href="http://answerend42.gitee.io/2020/10/07/%E5%88%9D%E8%B5%9B%E5%A4%8D%E4%B9%A0%E9%9B%86%E5%90%88/"/>
-    <id>http://answerend42.gitee.io/2020/10/07/%E5%88%9D%E8%B5%9B%E5%A4%8D%E4%B9%A0%E9%9B%86%E5%90%88/</id>
+    <link href="http://answerend42.github.io/2020/10/07/%E5%88%9D%E8%B5%9B%E5%A4%8D%E4%B9%A0%E9%9B%86%E5%90%88/"/>
+    <id>http://answerend42.github.io/2020/10/07/%E5%88%9D%E8%B5%9B%E5%A4%8D%E4%B9%A0%E9%9B%86%E5%90%88/</id>
     <published>2020-10-07T14:07:39.000Z</published>
     <updated>2020-10-10T13:56:09.563Z</updated>
     
@@ -35,19 +35,19 @@
     </summary>
     
     
-      <category term="记录" scheme="http://answerend42.gitee.io/categories/%E8%AE%B0%E5%BD%95/"/>
+      <category term="记录" scheme="http://answerend42.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="初赛" scheme="http://answerend42.gitee.io/tags/%E5%88%9D%E8%B5%9B/"/>
+      <category term="初赛" scheme="http://answerend42.github.io/tags/%E5%88%9D%E8%B5%9B/"/>
     
-      <category term="集合" scheme="http://answerend42.gitee.io/tags/%E9%9B%86%E5%90%88/"/>
+      <category term="集合" scheme="http://answerend42.github.io/tags/%E9%9B%86%E5%90%88/"/>
     
   </entry>
   
   <entry>
     <title>P1535 【[USACO08MAR]Cow Travelling S】</title>
-    <link href="http://answerend42.gitee.io/2020/10/06/P1535%20[USACO08MAR]Cow%20Travelling%20S/"/>
-    <id>http://answerend42.gitee.io/2020/10/06/P1535%20[USACO08MAR]Cow%20Travelling%20S/</id>
+    <link href="http://answerend42.github.io/2020/10/06/P1535%20[USACO08MAR]Cow%20Travelling%20S/"/>
+    <id>http://answerend42.github.io/2020/10/06/P1535%20[USACO08MAR]Cow%20Travelling%20S/</id>
     <published>2020-10-06T15:21:40.000Z</published>
     <updated>2020-10-06T15:59:20.139Z</updated>
     
@@ -64,19 +64,19 @@
     </summary>
     
     
-      <category term="题解" scheme="http://answerend42.gitee.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="深度优先搜索dfs" scheme="http://answerend42.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2dfs/"/>
+      <category term="深度优先搜索dfs" scheme="http://answerend42.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2dfs/"/>
     
-      <category term="剪枝" scheme="http://answerend42.gitee.io/tags/%E5%89%AA%E6%9E%9D/"/>
+      <category term="剪枝" scheme="http://answerend42.github.io/tags/%E5%89%AA%E6%9E%9D/"/>
     
   </entry>
   
   <entry>
     <title>Aha-Round-1</title>
-    <link href="http://answerend42.gitee.io/2020/08/18/Aha-Round-1/"/>
-    <id>http://answerend42.gitee.io/2020/08/18/Aha-Round-1/</id>
+    <link href="http://answerend42.github.io/2020/08/18/Aha-Round-1/"/>
+    <id>http://answerend42.github.io/2020/08/18/Aha-Round-1/</id>
     <published>2020-08-17T16:33:39.000Z</published>
     <updated>2020-10-03T09:54:08.322Z</updated>
     
@@ -91,35 +91,35 @@
     </summary>
     
     
-      <category term="比赛" scheme="http://answerend42.gitee.io/categories/%E6%AF%94%E8%B5%9B/"/>
+      <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="字符串" scheme="http://answerend42.gitee.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <category term="字符串" scheme="http://answerend42.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
-      <category term="模拟" scheme="http://answerend42.gitee.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="动态规划" scheme="http://answerend42.gitee.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <category term="动态规划" scheme="http://answerend42.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="区间DP" scheme="http://answerend42.gitee.io/tags/%E5%8C%BA%E9%97%B4DP/"/>
+      <category term="区间DP" scheme="http://answerend42.github.io/tags/%E5%8C%BA%E9%97%B4DP/"/>
     
-      <category term="状压DP" scheme="http://answerend42.gitee.io/tags/%E7%8A%B6%E5%8E%8BDP/"/>
+      <category term="状压DP" scheme="http://answerend42.github.io/tags/%E7%8A%B6%E5%8E%8BDP/"/>
     
-      <category term="数论" scheme="http://answerend42.gitee.io/tags/%E6%95%B0%E8%AE%BA/"/>
+      <category term="数论" scheme="http://answerend42.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="高精度" scheme="http://answerend42.gitee.io/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+      <category term="高精度" scheme="http://answerend42.github.io/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
     
-      <category term="最小生成树" scheme="http://answerend42.gitee.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+      <category term="最小生成树" scheme="http://answerend42.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
     
-      <category term="图论" scheme="http://answerend42.gitee.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="http://answerend42.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="广度优先搜索bfs" scheme="http://answerend42.gitee.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2bfs/"/>
+      <category term="广度优先搜索bfs" scheme="http://answerend42.github.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2bfs/"/>
     
   </entry>
   
   <entry>
     <title>暑假线下集训总结</title>
-    <link href="http://answerend42.gitee.io/2020/08/01/%E6%9A%91%E5%81%87%E7%BA%BF%E4%B8%8B%E9%9B%86%E8%AE%AD%E6%80%BB%E7%BB%93/"/>
-    <id>http://answerend42.gitee.io/2020/08/01/%E6%9A%91%E5%81%87%E7%BA%BF%E4%B8%8B%E9%9B%86%E8%AE%AD%E6%80%BB%E7%BB%93/</id>
+    <link href="http://answerend42.github.io/2020/08/01/%E6%9A%91%E5%81%87%E7%BA%BF%E4%B8%8B%E9%9B%86%E8%AE%AD%E6%80%BB%E7%BB%93/"/>
+    <id>http://answerend42.github.io/2020/08/01/%E6%9A%91%E5%81%87%E7%BA%BF%E4%B8%8B%E9%9B%86%E8%AE%AD%E6%80%BB%E7%BB%93/</id>
     <published>2020-07-31T16:10:30.000Z</published>
     <updated>2020-08-01T01:59:23.351Z</updated>
     
@@ -137,8 +137,8 @@
   
   <entry>
     <title>2月flag汇总</title>
-    <link href="http://answerend42.gitee.io/2020/05/01/2%E6%9C%88flag%E6%B1%87%E6%80%BB/2%E6%9C%88flag%E6%B1%87%E6%80%BB/"/>
-    <id>http://answerend42.gitee.io/2020/05/01/2%E6%9C%88flag%E6%B1%87%E6%80%BB/2%E6%9C%88flag%E6%B1%87%E6%80%BB/</id>
+    <link href="http://answerend42.github.io/2020/05/01/2%E6%9C%88flag%E6%B1%87%E6%80%BB/2%E6%9C%88flag%E6%B1%87%E6%80%BB/"/>
+    <id>http://answerend42.github.io/2020/05/01/2%E6%9C%88flag%E6%B1%87%E6%80%BB/2%E6%9C%88flag%E6%B1%87%E6%80%BB/</id>
     <published>2020-04-30T16:08:45.000Z</published>
     <updated>2020-07-27T12:44:08.741Z</updated>
     
@@ -153,15 +153,15 @@
     </summary>
     
     
-      <category term="记录" scheme="http://answerend42.gitee.io/categories/%E8%AE%B0%E5%BD%95/"/>
+      <category term="记录" scheme="http://answerend42.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
   </entry>
   
   <entry>
     <title>Codeforces Round 636 (Div. 3)</title>
-    <link href="http://answerend42.gitee.io/2020/04/26/cf/Codeforces%20Round%20636%20(Div.%203)/"/>
-    <id>http://answerend42.gitee.io/2020/04/26/cf/Codeforces%20Round%20636%20(Div.%203)/</id>
+    <link href="http://answerend42.github.io/2020/04/26/cf/Codeforces%20Round%20636%20(Div.%203)/"/>
+    <id>http://answerend42.github.io/2020/04/26/cf/Codeforces%20Round%20636%20(Div.%203)/</id>
     <published>2020-04-26T09:27:30.000Z</published>
     <updated>2020-08-04T15:44:34.616Z</updated>
     
@@ -177,23 +177,23 @@
     </summary>
     
     
-      <category term="比赛" scheme="http://answerend42.gitee.io/categories/%E6%AF%94%E8%B5%9B/"/>
+      <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="模拟" scheme="http://answerend42.gitee.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="数学" scheme="http://answerend42.gitee.io/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="构造" scheme="http://answerend42.gitee.io/tags/%E6%9E%84%E9%80%A0/"/>
+      <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
     
-      <category term="贪心" scheme="http://answerend42.gitee.io/tags/%E8%B4%AA%E5%BF%83/"/>
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
   <entry>
     <title>Codeforces Round 635 (Div. 2)</title>
-    <link href="http://answerend42.gitee.io/2020/04/24/cf/Codeforces%20Round%20635%20(Div.%202)/"/>
-    <id>http://answerend42.gitee.io/2020/04/24/cf/Codeforces%20Round%20635%20(Div.%202)/</id>
+    <link href="http://answerend42.github.io/2020/04/24/cf/Codeforces%20Round%20635%20(Div.%202)/"/>
+    <id>http://answerend42.github.io/2020/04/24/cf/Codeforces%20Round%20635%20(Div.%202)/</id>
     <published>2020-04-24T13:13:19.000Z</published>
     <updated>2020-04-24T13:16:10.878Z</updated>
     
@@ -208,21 +208,21 @@
     </summary>
     
     
-      <category term="比赛" scheme="http://answerend42.gitee.io/categories/%E6%AF%94%E8%B5%9B/"/>
+      <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="模拟" scheme="http://answerend42.gitee.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="构造" scheme="http://answerend42.gitee.io/tags/%E6%9E%84%E9%80%A0/"/>
+      <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
     
-      <category term="贪心" scheme="http://answerend42.gitee.io/tags/%E8%B4%AA%E5%BF%83/"/>
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
   <entry>
     <title>Codeforces Round 633 (Div. 2)</title>
-    <link href="http://answerend42.gitee.io/2020/04/24/cf/Codeforces%20Round%20633%20(Div.%202)/"/>
-    <id>http://answerend42.gitee.io/2020/04/24/cf/Codeforces%20Round%20633%20(Div.%202)/</id>
+    <link href="http://answerend42.github.io/2020/04/24/cf/Codeforces%20Round%20633%20(Div.%202)/"/>
+    <id>http://answerend42.github.io/2020/04/24/cf/Codeforces%20Round%20633%20(Div.%202)/</id>
     <published>2020-04-24T10:38:15.000Z</published>
     <updated>2020-08-04T15:51:58.840Z</updated>
     
@@ -237,19 +237,19 @@
     </summary>
     
     
-      <category term="比赛" scheme="http://answerend42.gitee.io/categories/%E6%AF%94%E8%B5%9B/"/>
+      <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="模拟" scheme="http://answerend42.gitee.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="构造" scheme="http://answerend42.gitee.io/tags/%E6%9E%84%E9%80%A0/"/>
+      <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
     
   </entry>
   
   <entry>
     <title>区间DP的一些理解</title>
-    <link href="http://answerend42.gitee.io/2020/04/17/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"/>
-    <id>http://answerend42.gitee.io/2020/04/17/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/</id>
+    <link href="http://answerend42.github.io/2020/04/17/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/"/>
+    <id>http://answerend42.github.io/2020/04/17/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/</id>
     <published>2020-04-17T06:50:18.000Z</published>
     <updated>2020-06-21T09:14:10.220Z</updated>
     
@@ -264,19 +264,19 @@
     </summary>
     
     
-      <category term="算法" scheme="http://answerend42.gitee.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://answerend42.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="动态规划" scheme="http://answerend42.gitee.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <category term="动态规划" scheme="http://answerend42.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="区间DP" scheme="http://answerend42.gitee.io/tags/%E5%8C%BA%E9%97%B4DP/"/>
+      <category term="区间DP" scheme="http://answerend42.github.io/tags/%E5%8C%BA%E9%97%B4DP/"/>
     
   </entry>
   
   <entry>
     <title>差分约束算法的一些个人理解</title>
-    <link href="http://answerend42.gitee.io/2020/04/12/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/"/>
-    <id>http://answerend42.gitee.io/2020/04/12/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/</id>
+    <link href="http://answerend42.github.io/2020/04/12/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/"/>
+    <id>http://answerend42.github.io/2020/04/12/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/</id>
     <published>2020-04-11T17:26:41.000Z</published>
     <updated>2020-10-09T15:52:04.597Z</updated>
     
@@ -290,23 +290,23 @@
     </summary>
     
     
-      <category term="算法" scheme="http://answerend42.gitee.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://answerend42.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="图论" scheme="http://answerend42.gitee.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="http://answerend42.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="最短路" scheme="http://answerend42.gitee.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+      <category term="最短路" scheme="http://answerend42.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
-      <category term="SPFA" scheme="http://answerend42.gitee.io/tags/SPFA/"/>
+      <category term="SPFA" scheme="http://answerend42.github.io/tags/SPFA/"/>
     
-      <category term="差分约束" scheme="http://answerend42.gitee.io/tags/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F/"/>
+      <category term="差分约束" scheme="http://answerend42.github.io/tags/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F/"/>
     
   </entry>
   
   <entry>
     <title>Codeforces Round 629 (Div. 3)</title>
-    <link href="http://answerend42.gitee.io/2020/03/27/cf/Codeforces%20Round%20629%20(Div.%203)/"/>
-    <id>http://answerend42.gitee.io/2020/03/27/cf/Codeforces%20Round%20629%20(Div.%203)/</id>
+    <link href="http://answerend42.github.io/2020/03/27/cf/Codeforces%20Round%20629%20(Div.%203)/"/>
+    <id>http://answerend42.github.io/2020/03/27/cf/Codeforces%20Round%20629%20(Div.%203)/</id>
     <published>2020-03-27T15:56:32.000Z</published>
     <updated>2020-08-04T16:15:14.936Z</updated>
     
@@ -322,23 +322,23 @@
     </summary>
     
     
-      <category term="比赛" scheme="http://answerend42.gitee.io/categories/%E6%AF%94%E8%B5%9B/"/>
+      <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="模拟" scheme="http://answerend42.gitee.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="数论" scheme="http://answerend42.gitee.io/tags/%E6%95%B0%E8%AE%BA/"/>
+      <category term="数论" scheme="http://answerend42.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="数学" scheme="http://answerend42.gitee.io/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="贪心" scheme="http://answerend42.gitee.io/tags/%E8%B4%AA%E5%BF%83/"/>
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
   <entry>
     <title>P6236 [COCI2010-2011] LJUTNJA</title>
-    <link href="http://answerend42.gitee.io/2020/03/25/P6236%20[COCI2010-2011]%20LJUTNJA/P6236%20[COCI2010-2011]%20LJUTNJA/"/>
-    <id>http://answerend42.gitee.io/2020/03/25/P6236%20[COCI2010-2011]%20LJUTNJA/P6236%20[COCI2010-2011]%20LJUTNJA/</id>
+    <link href="http://answerend42.github.io/2020/03/25/P6236%20[COCI2010-2011]%20LJUTNJA/P6236%20[COCI2010-2011]%20LJUTNJA/"/>
+    <id>http://answerend42.github.io/2020/03/25/P6236%20[COCI2010-2011]%20LJUTNJA/P6236%20[COCI2010-2011]%20LJUTNJA/</id>
     <published>2020-03-25T04:54:15.000Z</published>
     <updated>2020-03-27T07:25:54.164Z</updated>
     
@@ -355,21 +355,21 @@
     </summary>
     
     
-      <category term="题解" scheme="http://answerend42.gitee.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="模拟" scheme="http://answerend42.gitee.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="数论" scheme="http://answerend42.gitee.io/tags/%E6%95%B0%E8%AE%BA/"/>
+      <category term="数论" scheme="http://answerend42.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="数学" scheme="http://answerend42.gitee.io/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>第一次CF比赛</title>
-    <link href="http://answerend42.gitee.io/2020/03/24/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/"/>
-    <id>http://answerend42.gitee.io/2020/03/24/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/</id>
+    <link href="http://answerend42.github.io/2020/03/24/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/"/>
+    <id>http://answerend42.github.io/2020/03/24/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/</id>
     <published>2020-03-24T14:26:01.000Z</published>
     <updated>2020-03-24T15:43:01.226Z</updated>
     
@@ -382,25 +382,25 @@
     </summary>
     
     
-      <category term="比赛" scheme="http://answerend42.gitee.io/categories/%E6%AF%94%E8%B5%9B/"/>
+      <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="模拟" scheme="http://answerend42.gitee.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="数论" scheme="http://answerend42.gitee.io/tags/%E6%95%B0%E8%AE%BA/"/>
+      <category term="数论" scheme="http://answerend42.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
-      <category term="数学" scheme="http://answerend42.gitee.io/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="贪心" scheme="http://answerend42.gitee.io/tags/%E8%B4%AA%E5%BF%83/"/>
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="奇偶性" scheme="http://answerend42.gitee.io/tags/%E5%A5%87%E5%81%B6%E6%80%A7/"/>
+      <category term="奇偶性" scheme="http://answerend42.github.io/tags/%E5%A5%87%E5%81%B6%E6%80%A7/"/>
     
   </entry>
   
   <entry>
     <title>生动形象的理解二维前缀和</title>
-    <link href="http://answerend42.gitee.io/2020/03/15/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    <id>http://answerend42.gitee.io/2020/03/15/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/</id>
+    <link href="http://answerend42.github.io/2020/03/15/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    <id>http://answerend42.github.io/2020/03/15/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/</id>
     <published>2020-03-15T15:39:35.000Z</published>
     <updated>2020-10-06T15:36:24.659Z</updated>
     
@@ -413,19 +413,19 @@
     </summary>
     
     
-      <category term="算法" scheme="http://answerend42.gitee.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="http://answerend42.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="前缀和" scheme="http://answerend42.gitee.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+      <category term="前缀和" scheme="http://answerend42.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
-      <category term="二维前缀和" scheme="http://answerend42.gitee.io/tags/%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+      <category term="二维前缀和" scheme="http://answerend42.github.io/tags/%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   
   <entry>
     <title>P1434 [SHOI2002]滑雪</title>
-    <link href="http://answerend42.gitee.io/2020/03/11/P1434%20[SHOI2002]%E6%BB%91%E9%9B%AA/P1434%20[SHOI2002]%E6%BB%91%E9%9B%AA/"/>
-    <id>http://answerend42.gitee.io/2020/03/11/P1434%20[SHOI2002]%E6%BB%91%E9%9B%AA/P1434%20[SHOI2002]%E6%BB%91%E9%9B%AA/</id>
+    <link href="http://answerend42.github.io/2020/03/11/P1434%20[SHOI2002]%E6%BB%91%E9%9B%AA/P1434%20[SHOI2002]%E6%BB%91%E9%9B%AA/"/>
+    <id>http://answerend42.github.io/2020/03/11/P1434%20[SHOI2002]%E6%BB%91%E9%9B%AA/P1434%20[SHOI2002]%E6%BB%91%E9%9B%AA/</id>
     <published>2020-03-11T11:09:33.000Z</published>
     <updated>2020-10-06T15:33:00.183Z</updated>
     
@@ -442,21 +442,21 @@
     </summary>
     
     
-      <category term="题解" scheme="http://answerend42.gitee.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="深度优先搜索dfs" scheme="http://answerend42.gitee.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2dfs/"/>
+      <category term="深度优先搜索dfs" scheme="http://answerend42.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2dfs/"/>
     
-      <category term="搜索" scheme="http://answerend42.gitee.io/tags/%E6%90%9C%E7%B4%A2/"/>
+      <category term="搜索" scheme="http://answerend42.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
     
-      <category term="记忆化搜索" scheme="http://answerend42.gitee.io/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/"/>
+      <category term="记忆化搜索" scheme="http://answerend42.github.io/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
   <entry>
     <title>P1135 奇怪的电梯</title>
-    <link href="http://answerend42.gitee.io/2020/03/11/P1135%20%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF/P1135%20%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF/"/>
-    <id>http://answerend42.gitee.io/2020/03/11/P1135%20%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF/P1135%20%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF/</id>
+    <link href="http://answerend42.github.io/2020/03/11/P1135%20%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF/P1135%20%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF/"/>
+    <id>http://answerend42.github.io/2020/03/11/P1135%20%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF/P1135%20%E5%A5%87%E6%80%AA%E7%9A%84%E7%94%B5%E6%A2%AF/</id>
     <published>2020-03-11T08:38:19.000Z</published>
     <updated>2020-10-06T15:28:09.264Z</updated>
     
@@ -473,19 +473,19 @@
     </summary>
     
     
-      <category term="题解" scheme="http://answerend42.gitee.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="广度优先搜索bfs" scheme="http://answerend42.gitee.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2bfs/"/>
+      <category term="广度优先搜索bfs" scheme="http://answerend42.github.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2bfs/"/>
     
-      <category term="搜索" scheme="http://answerend42.gitee.io/tags/%E6%90%9C%E7%B4%A2/"/>
+      <category term="搜索" scheme="http://answerend42.github.io/tags/%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
   <entry>
     <title>P1057 传球游戏</title>
-    <link href="http://answerend42.gitee.io/2020/03/09/P1057%20%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/P1057%20%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/"/>
-    <id>http://answerend42.gitee.io/2020/03/09/P1057%20%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/P1057%20%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/</id>
+    <link href="http://answerend42.github.io/2020/03/09/P1057%20%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/P1057%20%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/"/>
+    <id>http://answerend42.github.io/2020/03/09/P1057%20%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/P1057%20%E4%BC%A0%E7%90%83%E6%B8%B8%E6%88%8F/</id>
     <published>2020-03-09T07:50:09.000Z</published>
     <updated>2020-10-06T15:31:46.353Z</updated>
     
@@ -501,17 +501,17 @@
     </summary>
     
     
-      <category term="题解" scheme="http://answerend42.gitee.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="动态规划" scheme="http://answerend42.gitee.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <category term="动态规划" scheme="http://answerend42.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
   <entry>
     <title>P6180 【[USACO15DEC]Breed Counting S】</title>
-    <link href="http://answerend42.gitee.io/2020/03/08/P6180%20%E3%80%90[USACO15DEC]Breed%20Counting%20S%E3%80%91/P6180%20%E3%80%90[USACO15DEC]Breed%20Counting%20S%E3%80%91/"/>
-    <id>http://answerend42.gitee.io/2020/03/08/P6180%20%E3%80%90[USACO15DEC]Breed%20Counting%20S%E3%80%91/P6180%20%E3%80%90[USACO15DEC]Breed%20Counting%20S%E3%80%91/</id>
+    <link href="http://answerend42.github.io/2020/03/08/P6180%20%E3%80%90[USACO15DEC]Breed%20Counting%20S%E3%80%91/P6180%20%E3%80%90[USACO15DEC]Breed%20Counting%20S%E3%80%91/"/>
+    <id>http://answerend42.github.io/2020/03/08/P6180%20%E3%80%90[USACO15DEC]Breed%20Counting%20S%E3%80%91/P6180%20%E3%80%90[USACO15DEC]Breed%20Counting%20S%E3%80%91/</id>
     <published>2020-03-08T07:54:42.000Z</published>
     <updated>2020-10-06T15:26:14.910Z</updated>
     
@@ -528,17 +528,17 @@
     </summary>
     
     
-      <category term="题解" scheme="http://answerend42.gitee.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="前缀和" scheme="http://answerend42.gitee.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+      <category term="前缀和" scheme="http://answerend42.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   
   <entry>
     <title>二月做题记录</title>
-    <link href="http://answerend42.gitee.io/2020/03/03/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
-    <id>http://answerend42.gitee.io/2020/03/03/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://answerend42.github.io/2020/03/03/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    <id>http://answerend42.github.io/2020/03/03/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</id>
     <published>2020-03-03T13:42:07.000Z</published>
     <updated>2020-08-04T16:53:49.119Z</updated>
     
@@ -554,17 +554,17 @@
     </summary>
     
     
-      <category term="记录" scheme="http://answerend42.gitee.io/categories/%E8%AE%B0%E5%BD%95/"/>
+      <category term="记录" scheme="http://answerend42.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="做题记录" scheme="http://answerend42.gitee.io/tags/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+      <category term="做题记录" scheme="http://answerend42.github.io/tags/%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>【模板】最近公共祖先（LCA）</title>
-    <link href="http://answerend42.gitee.io/2020/03/01/P3379%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89/P3379%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89/"/>
-    <id>http://answerend42.gitee.io/2020/03/01/P3379%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89/P3379%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89/</id>
+    <link href="http://answerend42.github.io/2020/03/01/P3379%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89/P3379%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89/"/>
+    <id>http://answerend42.github.io/2020/03/01/P3379%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89/P3379%20%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%EF%BC%88LCA%EF%BC%89/</id>
     <published>2020-03-01T15:40:50.000Z</published>
     <updated>2020-08-04T16:23:24.351Z</updated>
     
@@ -578,12 +578,12 @@
     </summary>
     
     
-      <category term="题解" scheme="http://answerend42.gitee.io/categories/%E9%A2%98%E8%A7%A3/"/>
+      <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="模板" scheme="http://answerend42.gitee.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+      <category term="最近公共祖先" scheme="http://answerend42.github.io/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
     
-      <category term="最近公共祖先" scheme="http://answerend42.gitee.io/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+      <category term="模板" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
