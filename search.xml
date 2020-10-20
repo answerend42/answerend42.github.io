@@ -3,7 +3,8 @@
   <entry>
     <title>P4170 [CQOI2007]涂色</title>
     <url>/2020/10/21/lg4170/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>假设你有一条长度为 $5$ 的木版，初始时没有涂过任何颜色。你希望把它的 $5$ 个单位长度分别涂上红、绿、蓝、绿、红色，用一个长度为 $5$ 的字符串表示这个目标：<code>RGBGR</code>。</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P4170" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>假设你有一条长度为 $5$ 的木版，初始时没有涂过任何颜色。你希望把它的 $5$ 个单位长度分别涂上红、绿、蓝、绿、红色，用一个长度为 $5$ 的字符串表示这个目标：<code>RGBGR</code>。</p>
 <p>每次你可以把一段连续的木版涂成一个给定的颜色，后涂的颜色覆盖先涂的颜色。例如第一次把木版涂成 <code>RRRRR</code>，第二次涂成 <code>RGGGR</code>，第三次涂成 <code>RGBGR</code>，达到目标。</p>
 <p>用尽量少的涂色次数达到目标。</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入仅一行，包含一个长度为 $n$ 的字符串，即涂色目标。字符串中的每个字符都是一个大写字母，不同的字母代表不同颜色，相同的字母代表相同颜色。($1≤n≤50$)</p>
@@ -1058,8 +1059,8 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
         <category>题解</category>
       </categories>
       <tags>
-        <tag>模板</tag>
         <tag>最近公共祖先</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
@@ -1168,8 +1169,8 @@ p<<1|1 \iff (p<<1)+1</script><h3 id="向上传递参数"><a href="#向上传递�
         <category>题解</category>
       </categories>
       <tags>
-        <tag>线段树</tag>
         <tag>模板</tag>
+        <tag>线段树</tag>
       </tags>
   </entry>
   <entry>
