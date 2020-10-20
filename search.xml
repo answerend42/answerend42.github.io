@@ -308,9 +308,9 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
+        <tag>贪心</tag>
         <tag>数学</tag>
         <tag>构造</tag>
-        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -345,8 +345,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>构造</tag>
         <tag>贪心</tag>
+        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
@@ -575,8 +575,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -753,8 +753,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
@@ -1058,8 +1058,8 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
         <category>题解</category>
       </categories>
       <tags>
-        <tag>最近公共祖先</tag>
         <tag>模板</tag>
+        <tag>最近公共祖先</tag>
       </tags>
   </entry>
   <entry>
@@ -1168,8 +1168,8 @@ p<<1|1 \iff (p<<1)+1</script><h3 id="向上传递参数"><a href="#向上传递�
         <category>题解</category>
       </categories>
       <tags>
-        <tag>模板</tag>
         <tag>线段树</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
