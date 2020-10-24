@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Codeforces Round 677 (Div. 3)</title>
+    <url>/2020/10/21/cf1433/</url>
+    <content><![CDATA[<h2 id="A-Boring-Apartments"><a href="#A-Boring-Apartments" class="headerlink" title="A.Boring Apartments"></a><a href="https://codeforces.com/contest/1433/problem/A" target="_blank" rel="noopener">A.Boring Apartments</a></h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>有一座建筑物由 $10000$ 套公寓组成，编号从 $1$ 到 $10000$，包括 $1,10000$。</p>
+<p>如果一个公寓的号码是由<em>相同的数字</em>组成的，则称它<strong>无聊</strong>。无聊公寓的例子有 $11,2,777,9999$ 等等。</p>
+<p>我们的主角是个捣蛋鬼，他给所有无聊公寓的对讲机打电话，直到有人接电话，顺序如下:</p>
+<ul>
+<li>首先，他以递增的次序呼叫所有由数字 $1$ 组成的公寓($1,11,111,1111$)</li>
+<li>接下来，他以递增的次序呼叫所有由数字 $2$ 组成的公寓($2,22,222,2222$)</li>
+<li>诸如此类。</li>
+</ul>
+<p>无聊公寓的住户 $x$ 接听了电话，我们的角色不再给任何人打电话。</p>
+<p>我们的主角想知道他总共按了多少个数字，而你的任务就是帮助他计算按键的总数。</p>
+<p>例如，如果无聊公寓 $22$ 的居民回答，那么我们的字符称为公寓 $1,11,111,111,2,22$，他按下的总数字是 $1 + 2 + 3 + 4 + 1 + 2 = 13$。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入的第一行包含一个整数 $t$ ($1\leq t \leq3 6$)为测试用例数。</p>
+<p>每组数据中唯一的一行输入包含一个整数 $x$($1\leq x \leq 9999$)，表示接电话的居民的公寓号。保证 $x$ 由相同的数字组成。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>对于每个测试用例，打印出答案: 我们的主角总共按了多少个数字。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>考虑到打到 $x$ 时，前面的所有数字的所有号码都被打了一遍即 $(c-1) \times 10$,其中 $c = x \bmod 10$。</p>
+<p>当前这个数字被打了 $\dfrac {(cnt+1) \times cnt}{2}$，其中 $cnt$ 为 $x$ 的位数 。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> _, n;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>, m = n;</span><br><span class="line">    <span class="keyword">while</span> (m) &#123;</span><br><span class="line">        m /= <span class="number">10</span>;</span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> c = n % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> ans = (cnt + <span class="number">1</span>) * cnt / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, (c - <span class="number">1</span>) * <span class="number">10</span> + ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;_); _; _--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        solve(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="B-Yet-Another-Bookshelf"><a href="#B-Yet-Another-Bookshelf" class="headerlink" title="B.Yet Another Bookshelf"></a><a href="https://codeforces.com/contest/1433/problem/B" target="_blank" rel="noopener">B.Yet Another Bookshelf</a></h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>有一个可以放下 $n$ 本书的书架。如果第 $i$ 个位置上有一本书，则 $a_i=1$，否则 $a_i=0$。保证书架上至少有一本书。</p>
+<p>在一步中，你可以移动一些连续的段 $[l,r]$ 组成的图书(也就是说，对于每个 $i$ 从 $ l$ 到 $r$，满足 $a_i=1$)：</p>
+<ul>
+<li>把它移到右边 $1$ 个：把所有的 $i(l\leq i\leq r)$ 号书移到 $i+1$  。前提是当 $r+1 \leq n$ 而且 $r+1$ 上没有书</li>
+<li>把它移到左边 $1$ 个：把所有的 $i(l \leq i \leq r)$ 号书移到 $i-1$  。前提是当 $l-1 \leq n$ 而且 $r+1$ 上没有书</li>
+</ul>
+<p>你的任务是找到一段连续的(即没有任何间隙的段)来收集书架上所有书籍所需的最小移动次数。</p>
+<h3 id="输入格式-1"><a href="#输入格式-1" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入的第一行包含一个整数 $t$($1≤ t ≤200$)为测试用例数。</p>
+<p>测试用例的第一行包含一个整数 $n$($1≤ n ≤50$)书架上的位置数。测试用例的第二行包含 $n$ 个整数 $a_1,a_2,\ldots,a_n$($0 \le a_i \le 1$) ，其中如果在这个位置有一本书，则 $a_i$ 为 $1$，否则为 $0$。保证书架上<strong>至少有一本书</strong>。</p>
+<h3 id="输出格式-1"><a href="#输出格式-1" class="headerlink" title="输出格式"></a>输出格式</h3><p>对于每个测试用例，输出一个整数：用连续段(即没有间隙的段)收集书架上所有书所需的最小移动次数。</p>
+<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>如果有两个段作为不连续的段，它们之间的空隙我们总可以一步完成。</p>
+<p>那么对于每一个记录的段，求出它与下一个段的长度，最后将这些 “空隙”长度加起来就是我们的答案。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> _, n, a[<span class="number">55</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> last = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] == <span class="number">1</span> &amp;&amp; !last) &#123;</span><br><span class="line">            last = i;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a[i] == <span class="number">1</span>) &#123;</span><br><span class="line">            ans += i - last - <span class="number">1</span>;</span><br><span class="line">            last = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;_); _; _--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">        solve(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-Dominant-Piranha"><a href="#C-Dominant-Piranha" class="headerlink" title="C.Dominant Piranha"></a><a href="https://codeforces.com/contest/1433/problem/C" target="_blank" rel="noopener">C.Dominant Piranha</a></h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><p>水族馆里有 $n$ 条大小分别为 $a_1, a_2, \ldots, a_n$ 的食人鱼，按照生活在水族馆的顺序从左到右编号。</p>
+<p>伯兰州立大学的科学家们想要找出水族馆里是否有占优势的食人鱼。如果食人鱼能吃掉水族馆里所有的其他食人鱼(当然，除了它自己) ，它就被称为优势食人鱼。其他的食人鱼什么也不会做，而占优势的食人鱼会吃掉它们。</p>
+<p>由于水族馆相当狭长，食人鱼在一次移动中只能吃掉邻近的一条食人鱼。食人鱼可以根据自己的需要(或尽可能)做任何动作。更确切地说:</p>
+<ul>
+<li>食人鱼 $i$ 可以吃食人鱼 $i-1$ 当且仅当 $a_{i-1}&lt;a_i$ </li>
+<li>食人鱼 $i$ 可以吃食人鱼 $i+1$ 当且仅当 $a_{i+1}&lt;a_i$ </li>
+</ul>
+<p>在 $i$ 号食人鱼吃掉一条鱼后，它的体积会增大一 ($a_i \to a_i+1$)</p>
+<p>你要找到占优势的任意一条食人鱼，如果没有，输出 $-1$</p>
+<h3 id="输入格式-2"><a href="#输入格式-2" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入的第一行包含一个整数 $t$($1 \le t \le 2 \cdot 10^4$)为测试用例数。</p>
+<p>测试用例的第一行包含一个整数 $n$($2 \le n \le 3 \cdot 10^5$)水族馆里食人鱼的数量。测试用例的第二行包含 $n$ 个整数 $a_1,a_2,\ldots,a_n$($1 \le a_i \le 10^9$) 。</p>
+<h3 id="输出格式-2"><a href="#输出格式-2" class="headerlink" title="输出格式"></a>输出格式</h3><p>对于每个测试用例：如果没有一条占优势的鱼输出 $-1$，否则输出任意一条优势鱼的编号</p>
+<h3 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h3><p>无解的情况很好判断，也就是全部相等。对于其他的情况，总是能确定一个唯一最大值（也可能是吃掉鱼后的唯一最大）。我的这个做法的正确性不能保证，是通过找到最大和次大两个进行判断的，不确定有没有数据能够卡掉 = =</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">3e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> _, n, a[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> last = <span class="number">0</span>, ans = <span class="number">0</span>, flag = <span class="number">1</span>, maxx = a[<span class="number">1</span>], idx = <span class="number">1</span>, max2, idx2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] != a[<span class="number">1</span>]) &#123;</span><br><span class="line">            flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (maxx &lt; a[i]) &#123;</span><br><span class="line">                max2 = maxx, idx2 = idx;</span><br><span class="line">                maxx = a[i], idx = i;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (maxx &gt; a[i]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a[i - <span class="number">1</span>] == maxx) &#123;</span><br><span class="line">                    max2 = maxx, idx2 = idx;</span><br><span class="line">                    maxx = a[i - <span class="number">1</span>], idx = i - <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a[i + <span class="number">1</span>] == maxx) &#123;</span><br><span class="line">                    max2 = maxx, idx2 = idx;</span><br><span class="line">                    maxx = a[i + <span class="number">1</span>], idx = i + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (idx - <span class="number">1</span> &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[idx - <span class="number">1</span>] &lt; maxx) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, idx);</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (idx + <span class="number">1</span> &lt;= n &amp;&amp; !flag) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[idx + <span class="number">1</span>] &lt; maxx) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, idx);</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (idx2 + <span class="number">1</span> &lt;= n &amp;&amp; !flag) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[idx2 + <span class="number">1</span>] &lt; max2) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, idx2);</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (idx2 - <span class="number">1</span> &gt;= <span class="number">1</span> &amp;&amp; !flag) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[idx2 - <span class="number">1</span>] &lt; max2) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, idx2);</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;_); _; _--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">        solve(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>不应该写成 <code>a[idx-1]&lt;maxx&amp;&amp;a[idx-1]&gt;=1</code> 可能访问负数下标</li>
+</ol>
+<h2 id="D-Districts-Connection"><a href="#D-Districts-Connection" class="headerlink" title="D. Districts Connection"></a><a href="https://codeforces.com/contest/1433/problem/D" target="_blank" rel="noopener">D. Districts Connection</a></h2><h3 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h3><p>城市有 $n$ 个区域，第 $i$ 个区域属于 $a_i$ 号帮派，最初没有区域互相连接。</p>
+<p>你的任务是建立 $n-1$ 条双向边使得区域间相互连通，任意一条边的两端不属于同一个帮派。</p>
+<h3 id="输入格式-3"><a href="#输入格式-3" class="headerlink" title="输入格式"></a>输入格式</h3><p>输入的第一行包含一个整数 $t$($1 \le t \le 500$)为测试用例数。</p>
+<p>测试用例的第一行包含一个整数 $n$($2 \le n \le 5000$)区域的数量。测试用例的第二行包含 $n$ 个整数 $a_1,a_2,\ldots,a_n$($1 \le a_i \le 10^9$)表示 $i$ 号区域的归属 。</p>
+<h3 id="输出格式-3"><a href="#输出格式-3" class="headerlink" title="输出格式"></a>输出格式</h3><p>对于每一个测试用例：</p>
+<ul>
+<li><p>如果不能连接输出一行字符串 <code>NO</code></p>
+</li>
+<li><p>如果可以连接输出一行字符串 <code>YES</code>，接下来 $n-1$ 行分别输出 $n-1$ 条边，用点对 $x_i$ 和 $y_i$($1 \le x_i, y_i \le n; x_i \ne y_i$)表示。 </p>
+</li>
+</ul>
+<h3 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h3><p>无解的情况很好判断，也就是全部相等。考虑至少有两个帮派的情况，将所有非 $a_1$ 的帮派控制的区域与 $a_1$ 相连，找到最后一个与 $a_1$ 相连的区域，将所有 $a_1$ 帮派控制的区域与其相连。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">    Node() &#123;&#125;</span><br><span class="line">    Node(<span class="keyword">int</span> _x, <span class="keyword">int</span> _y) &#123; x = _x, y = _y; &#125;</span><br><span class="line">&#125; p[<span class="number">5005</span>];</span><br><span class="line"><span class="keyword">int</span> _, n, a[<span class="number">5005</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>, flag = <span class="number">1</span>, idx, idx2;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] != a[<span class="number">1</span>]) &#123;</span><br><span class="line">            flag = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag)</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i] != a[<span class="number">1</span>])</span><br><span class="line">                p[++cnt] = &#123; <span class="number">1</span>, i &#125;, idx = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[i] == a[<span class="number">1</span>])</span><br><span class="line">                p[++cnt] = &#123; idx, i &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++) <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, p[i].x, p[i].y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;_); _; _--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">        solve(n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>构造函数必须先考虑无参构造，否则会报错</li>
+</ol>
+]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>模拟</tag>
+        <tag>数学</tag>
+        <tag>贪心</tag>
+        <tag>构造</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>P4170 [CQOI2007]涂色</title>
     <url>/2020/10/21/lg4170/</url>
     <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P4170" target="_blank" rel="noopener">题目链接</a></p>
@@ -37,8 +114,8 @@
         <category>题解</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>贪心</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -142,8 +219,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
         <category>比赛</category>
       </categories>
       <tags>
-        <tag>字符串</tag>
         <tag>模拟</tag>
+        <tag>字符串</tag>
         <tag>动态规划</tag>
         <tag>区间DP</tag>
         <tag>状压DP</tag>
@@ -309,9 +386,9 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
+        <tag>数学</tag>
         <tag>贪心</tag>
         <tag>构造</tag>
-        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -575,9 +652,9 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数论</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -623,8 +700,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数论</tag>
         <tag>数学</tag>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -753,9 +830,9 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数论</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
+        <tag>数论</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
@@ -1059,8 +1136,8 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
         <category>题解</category>
       </categories>
       <tags>
-        <tag>最近公共祖先</tag>
         <tag>模板</tag>
+        <tag>最近公共祖先</tag>
       </tags>
   </entry>
   <entry>
@@ -1169,8 +1246,8 @@ p<<1|1 \iff (p<<1)+1</script><h3 id="向上传递参数"><a href="#向上传递�
         <category>题解</category>
       </categories>
       <tags>
-        <tag>模板</tag>
         <tag>线段树</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
