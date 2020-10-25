@@ -146,8 +146,8 @@
         <category>题解</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>字符串</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -289,8 +289,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
         <category>比赛</category>
       </categories>
       <tags>
-        <tag>模拟</tag>
         <tag>字符串</tag>
+        <tag>模拟</tag>
         <tag>动态规划</tag>
         <tag>区间DP</tag>
         <tag>状压DP</tag>
@@ -826,9 +826,9 @@ x_3 \leq x_2-3
       </categories>
       <tags>
         <tag>模拟</tag>
+        <tag>数论</tag>
         <tag>数学</tag>
         <tag>贪心</tag>
-        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -889,8 +889,8 @@ x_3 \leq x_2-3
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数学</tag>
         <tag>数论</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -1050,9 +1050,9 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
       </categories>
       <tags>
         <tag>模拟</tag>
+        <tag>数论</tag>
         <tag>数学</tag>
         <tag>贪心</tag>
-        <tag>数论</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
@@ -1426,8 +1426,8 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
         <category>题解</category>
       </categories>
       <tags>
-        <tag>最近公共祖先</tag>
         <tag>模板</tag>
+        <tag>最近公共祖先</tag>
       </tags>
   </entry>
   <entry>
@@ -1564,8 +1564,8 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
         <category>题解</category>
       </categories>
       <tags>
-        <tag>模板</tag>
         <tag>线段树</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
