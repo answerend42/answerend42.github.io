@@ -49,8 +49,8 @@
       </categories>
       <tags>
         <tag>图论</tag>
-        <tag>最近公共祖先</tag>
         <tag>网络流</tag>
+        <tag>最近公共祖先</tag>
         <tag>倍增</tag>
         <tag>二分图</tag>
       </tags>
@@ -152,8 +152,8 @@
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
         <tag>构造</tag>
       </tags>
   </entry>
@@ -573,8 +573,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
         <tag>构造</tag>
       </tags>
   </entry>
@@ -887,8 +887,8 @@ x_3 \leq x_2-3
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -1112,8 +1112,8 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
@@ -1491,8 +1491,8 @@ f_{i,j}&amp;=f_{i-1,j-1}+f_{1,j-1} (i=n)
         <category>题解</category>
       </categories>
       <tags>
-        <tag>模板</tag>
         <tag>最近公共祖先</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
