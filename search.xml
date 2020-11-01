@@ -1721,8 +1721,8 @@ f_{i,j}&amp;=f_{i-1,j-1}+f_{1,j-1} (i=n)
         <category>题解</category>
       </categories>
       <tags>
-        <tag>模板</tag>
         <tag>线段树</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
