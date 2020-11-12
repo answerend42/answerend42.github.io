@@ -1,0 +1,7 @@
+graph example{
+    node[shape=circle];
+    5--3--1;
+    5--4--6;
+    4--7;
+    3--2;
+}

@@ -1,0 +1,106 @@
+<hr>
+<p>title: P1009 阶乘之和<br>date: 2020-02-21 14:58:02<br>tags: [高精度]</p>
+<h2 id="categories-题解"><a href="#categories-题解" class="headerlink" title="categories: 题解"></a>categories: 题解</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
+<p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
+<p>​    提交，Judge，一气呵成。</p>
+<p><img src="https://pic.downk.cc/item/5e4f813b48b86553ee32c0fd.png" alt=""></p>
+<p>​    然而50Pts…</p>
+<!-- more -->
+<h2 id="找锅"><a href="#找锅" class="headerlink" title="找锅"></a>找锅</h2><p>​    明显的，程序出了锅。</p>
+<blockquote>
+<p>怀疑并不是缺点。总是疑，而并不下断语，这才是缺点。    ——鲁迅</p>
+</blockquote>
+<p>​    为什么会 Wa 呢，这是因为数据范围 $n \leq50$ 实际验算确认，unsigned long long最大可储存的阶乘是 $20!$</p>
+<p>,当计算 $21!$​ 时，就出现了溢出的错误。</p>
+<h2 id="修锅"><a href="#修锅" class="headerlink" title="修锅"></a>修锅</h2><p>​    是时候介绍主角——高精度了。高精度适用于无法直接用类型储存的数值计算，计算方式类似于竖式算法。竖式算法是通过同一位的两数加减乘除后进位的算法。</p>
+<p><img src="https://oi-wiki.org/math/images/plus.png" alt=""></p>
+<p>​                                                                                                                                                                        图源自OI wiki</p>
+<h3 id="储存方式"><a href="#储存方式" class="headerlink" title="储存方式"></a>储存方式</h3><p>​    既然不能用一种类型储存，很自然让人想到字符串(string)，因为string可以动态扩容。但其实string的本质也就是一个数组，而高精度需要储存的都是数字，为什么不用整形(int)数组呢？如果用了int，却无法估计最终会有多少位数时，不妨动态扩容，也就是使用vector作为基类。一阵分析后，我们开始用vector。</p>
+<p>​    竖式运算中由最低位向最高位逐步计算，但是不能估计最高位是否可能进位，vector的扩容是向后的，即越后的数越后出现，那么较低位的数就理所应当先出现，这就需要逆序储存到vector。</p>
+<pre><code class="lang-cpp">string s;
+vector&lt;int&gt; v;
+cin&gt;&gt;s;
+for(int i=s.size()-1;i&gt;=0;i--)
+    v.push_back(s[i]-&#39;0&#39;);
+</code></pre>
+<h3 id="计算方式"><a href="#计算方式" class="headerlink" title="计算方式"></a>计算方式</h3><h4 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h4><pre><code class="lang-cpp">vector&lt;int&gt; add(vector&lt;int&gt; &amp;A,vector&lt;int&gt; &amp;B)
+{
+    if(A.size()&lt;B.size())    return add(B,A);
+    vector&lt;int&gt;C;
+    int t=0,len=A.size();
+    for(int i=0;i&lt;=len;i++)
+    {
+        t+=A[i];
+        if(i&lt;B.size())    t+=B[i];
+        C.push_back(t%10);
+        t/=10;
+    }
+    if(t)    C.push_back(t);
+    return C;
+}
+</code></pre>
+<p>​    首先需要判断A和B谁位数更大，这里让A的位数始终大于B。因为A的位数更大，保证每一位加法都可以有A的这一位参与其中，但B就不一定了，正如上例中百位数只有A的9参与了计算。同时在计算每一位的和之后将该值对10取模（模拟进位过程），然后将该值除以10，最后判断最后一位是否需要进位，如果需要就将最后一位加入，最终返回一个vector。</p>
+<h4 id="乘法-高精度乘以低精度"><a href="#乘法-高精度乘以低精度" class="headerlink" title="乘法 高精度乘以低精度"></a>乘法 高精度乘以低精度</h4><pre><code class="lang-cpp">vector&lt;int&gt; mul(vector&lt;int&gt; &amp;A,int b)
+{
+    vector&lt;int&gt;C;
+    int t=0;
+    for(int i=0;i&lt;A.size()||t;i++)
+    {
+        if(i&lt;A.size())    t+=A[i]*b;
+        C.push_back(t%10);
+        t/=10;
+    }
+    return C;
+}
+</code></pre>
+<p>（作者并不会高精度乘以高精度，以后再更）</p>
+<p>​    和加法类似，同样是每一位乘以b之后对10取模（进位）。值得一提的是这条语句<code>i&lt;A.size()||t</code>因为乘法运算进位有可能不止一位，要考虑t不断进位的情况。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>​    有了以上步骤，我们可以很快打出本题代码。</p>
+<pre><code class="lang-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;int&gt; a, b, ans;
+int n;
+vector&lt;int&gt; mul(vector&lt;int&gt; &amp;A, int b) {
+    vector&lt;int&gt; C;
+    int t = 0;
+    for (int i = 0; i &lt; A.size() || t; i++) {
+        if (i &lt; A.size())
+            t += A[i] * b;
+        C.push_back(t % 10);
+        t /= 10;
+    }
+    return C;
+}
+vector&lt;int&gt; add(vector&lt;int&gt; &amp;A, vector&lt;int&gt; &amp;B) {
+    if (A.size() &lt; B.size())
+        return add(B, A);
+    vector&lt;int&gt; C;
+    int t = 0, len = A.size();
+    for (int i = 0; i &lt;= len; i++) {
+        t += A[i];
+        if (i &lt; B.size())
+            t += B[i];
+        C.push_back(t % 10);
+        t /= 10;
+    }
+    if (t)
+        C.push_back(t);
+    return C;
+}
+int main() {
+    scanf(&quot;%d&quot;, &amp;n);
+    for (int i = 1; i &lt;= n; i++) {
+        a.clear();
+        a.push_back(1);
+        for (int j = 1; j &lt;= i; j++) {
+            b = mul(a, j);
+            a = b;
+        }
+        ans = add(ans, a);
+    }
+    for (int i = ans.size() - 1; i &gt;= 0; i--) cout &lt;&lt; ans[i];
+    return 0;
+}
+</code></pre>
+<p>​    题解到这里就结束了，以下是一些作者的题外话。</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>​    本题是 noip 1999 的题目，当时的竞赛不分普及组和提高组，可以使用的语言包括 basic ，方便好用的 stl 也没有解禁，甚至于整个中国也没有现在如此之多的 OIer 为了理想而奋斗。现如今的 OI 风雨交加，会有很多很多的 OIer 们因为现实不得不退役，但我认为在 OI 赛场上奋力拼搏，勤恳训练的日子会为所有参加竞赛、热爱竞赛的人留下永恒难忘的回忆。</p>

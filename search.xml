@@ -1,38 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>回首与展望</title>
-    <url>/2020/11/10/%E5%9B%9E%E9%A6%96%E4%B8%8E%E5%B1%95%E6%9C%9B/</url>
-    <content><![CDATA[<h2 id="从中考前说起"><a href="#从中考前说起" class="headerlink" title="从中考前说起"></a>从中考前说起</h2><p>​    疫情以来，人的意志消沉，网课不想上，实际上学 oi 学的也少之又少，现在看来，有相当多的 waste time（</p>
-<p>​    中考不出意外的考炸了，草（</p>
-<p>​    然后是来到了六中，心里确实不爽，暗暗下定了决心吧……</p>
-<h2 id="第一次来到六中机房"><a href="#第一次来到六中机房" class="headerlink" title="第一次来到六中机房"></a>第一次来到六中机房</h2><p>​    要上信息课还是很激动的，第一次去机房，给我留下了深刻的印象。机房不大，60 台电脑，两个机房分列在一楼半的两侧。说实在话，有些失落——机房和六中百年的校史、和那幢德华楼一样带着历史的陈旧感……但也应该知足了不是吗？起码能碰碰电脑，而不是去教室里学不喜欢的 whk，或者是花费时间到社交上，对我来讲，很享受。</p>
-<p>​    第一节课很快就结束了，没想到的是第二节课就换老师了……</p>
-<h2 id="校园生活中关于-oi-的一些信息"><a href="#校园生活中关于-oi-的一些信息" class="headerlink" title="校园生活中关于 oi 的一些信息"></a>校园生活中关于 oi 的一些信息</h2><p>​    一个是六中居然有指导老师，很震惊（后来知道指导老师不等于教练emm……）</p>
-<p>​    通用技术老师似乎位高权重，讲了讲专利的事情和保送政策，实际上，由于最近的神童抗癌事件，<a href="https://www.sohu.com/a/414334738_367117" target="_blank" rel="noopener">教育部把这项竞赛移出了竞赛名录</a>。也就是说，六中传统的保送被严重打击了。后又介绍了英才计划，这个计划可以说是竞赛生的退路吧，没详细了解。接着讲到五大竞赛，其实学校也就数学还行，但即使在武汉市内也算不上很好（当然，我们默认不和 hsy 比）。谈到 oi 时，称这个竞赛需要从初中开始培养，确实，我们看到 gjx 就是六初的，<del>但是人家何必来六中呢……</del>。（也不绝对，我这样的败犬不就来了吗）</p>
-<p>​    总而言之，不太乐观，六中似乎更加看重体育人才的培养……</p>
-<h2 id="停课"><a href="#停课" class="headerlink" title="停课"></a>停课</h2><p>​    觉得确实该停，一个是能够保证作息的规律，二是抽点时间。</p>
-<h2 id="一些计划"><a href="#一些计划" class="headerlink" title="一些计划"></a>一些计划</h2><p>​    Studying Father 的动态题单 </p>
-<p><object data="./list.pdf" type="application/pdf" width="100%" height="900px"><br>​    洛谷网校的夏令营课程（wtcl，现在还没有看完夏令营qaq）</p>
+    <title>P4513 小白逛公园</title>
+    <url>/2020/11/12/lg4513/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在小新家附近有一条“公园路”，路的一边从南到北依次排着 $n$ 个公园，小白早就看花了眼，自己也不清楚该去哪些公园玩了。  </p>
+<p>一开始，小白就根据公园的风景给每个公园打了分-.-。小新为了省事，每次遛狗的时候都会事先规定一个范围，小白只可以选择第 $a$ 个和第 $b$ 个公园之间（包括 $a$、$b$ 两个公园）选择连续的一些公园玩。小白当然希望选出的公园的分数总和尽量高咯。同时，由于一些公园的景观会有所改变，所以，小白的打分也可能会有一些变化。  </p>
+<p>那么，就请你来帮小白选择公园吧。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p> 第一行，两个整数 $N$ 和 $M$，分别表示表示公园的数量和操作（遛狗或者改变打分）总数。<br>    接下来 $N$ 行，每行一个整数，依次给出小白 开始时对公园的打分。<br>    接下来 $M$ 行，每行三个整数。第一个整数 $K$，$1$ 或 $2$。</p>
+<ul>
+<li>$K=1$ 表示，小新要带小白出去玩，接下来的两个整数 $a$ 和 $b$ 给出了选择公园的范围（$1≤a,b≤N$）。测试数据可能会出现 $a&gt;b$ 的情况，需要进行交换；</li>
+<li>$K=2$ 表示，小白改变了对某个公园的打分，接下来的两个整数 $p$ 和 $s$，表示小白对第 $p$ 个公园的打分变成了 $s$($1\le p \le N$)。<br>  其中，$1\le N \le 5 \times 10^5$，$1 \le M \le 10^5$，所有打分都是绝对值不超过 $1000$ 的整数。  </li>
+</ul>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p> 小白每出去玩一次，都对应输出一行，只包含一个整数，表示小白可以选出的公园得分和的最大值。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>考虑一下不修改的做法，直接暴力跑一遍复杂度是 $\mathcal{O}(n)$ 的，不能直接去做。</p>
+<p>维护一段区间的数据结构中，线段树无疑是一个很好的选择。</p>
+<p>如果仍然采用暴力查询的方法，本质上复杂度并没有变优，想到朴素方法中只有与上一段相连和另起一段的情况，能否作为我们的解题思路呢？</p>
+<p>这就涉及到了线段树上区间之间的合并（当然，单元素也是区间）</p>
+<p>对于本题，一段中最大的子段有三种情况：</p>
 <ol>
-<li><p><a href="https://class.luogu.com.cn/classroom/yugu20ntg1" target="_blank" rel="noopener">TG1 初级数据结构 1</a> 泛看 40min</p>
+<li>最大的子段全部在本区间的右侧</li>
+<li>最大的子段全部在本区间的左侧</li>
+<li>最大的子段越过了本区间的中点</li>
+</ol>
+<p>注意到第三种情况一定是包含了本区间的一半，子区间的和是很好维护的，那么只要考虑另一半中选取开头的最大子段。（左区间从右到左的最大子段，右区间从左到右的最大子段）</p>
+<p>本题也就被我们解决了。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e5</span> + <span class="number">5</span>, inf = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tree</span> &#123;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ls p &lt;&lt; 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rs p &lt;&lt; 1 | 1</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">        ll ml, mr, mx, sum;</span><br><span class="line">        <span class="keyword">int</span> l, r;</span><br><span class="line">    &#125; T[N &lt;&lt; <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    ll a[N];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">        T[p].sum = T[ls].sum + T[rs].sum, T[p].ml = max(T[ls].ml, T[ls].sum + T[rs].ml),</span><br><span class="line">        T[p].mr = max(T[rs].mr, T[rs].sum + T[ls].mr),</span><br><span class="line">        T[p].mx = max(T[ls].mx, max(T[rs].mx, T[ls].mr + T[rs].ml));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        T[p].l = l, T[p].r = r;</span><br><span class="line">        <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">            T[p].sum = T[p].ml = T[p].mr = T[p].mx = a[l];</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">mid</span><span class="params">(l + r &gt;&gt; <span class="number">1</span>)</span></span>;</span><br><span class="line">        build(ls, l, mid);</span><br><span class="line">        build(rs, mid + <span class="number">1</span>, r);</span><br><span class="line">        push_up(p);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (T[p].l == T[p].r) &#123;</span><br><span class="line">            T[p].sum = T[p].ml = T[p].mr = T[p].mx = y;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">mid</span><span class="params">(T[p].l + T[p].r &gt;&gt; <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt;= mid)</span><br><span class="line">            update(ls, x, y);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            update(rs, x, y);</span><br><span class="line">        push_up(p);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">Node <span class="title">query</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l &lt;= T[p].l &amp;&amp; T[p].r &lt;= r)</span><br><span class="line">            <span class="keyword">return</span> T[p];</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">mid</span><span class="params">(T[p].l + T[p].r &gt;&gt; <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">if</span> (r &lt;= mid)</span><br><span class="line">            <span class="keyword">return</span> query(ls, l, r);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (l &gt; mid)</span><br><span class="line">            <span class="keyword">return</span> query(rs, l, r);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            Node x = query(ls, l, r), y = query(rs, l, r), re;</span><br><span class="line">            re.sum = x.sum + y.sum;</span><br><span class="line">            re.ml = max(x.sum + y.ml, x.ml);</span><br><span class="line">            re.mr = max(y.sum + x.mr, y.mr);</span><br><span class="line">            re.mx = max(x.mx, max(y.mx, x.mr + y.ml));</span><br><span class="line">            <span class="keyword">return</span> re;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Tree T;</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> op;</span><br><span class="line">ll x, y;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; T.a[i];</span><br><span class="line">    T.build(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (x &gt; y)</span><br><span class="line">                swap(x, y);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; T.query(<span class="number">1</span>, x, y).mx &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            T.update(<span class="number">1</span>, x, y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li><p>在本题中计算最终结果时需要用到左区间的最大子段、右区间的最大子段、左区间从右到左的最大子段、右区间从左到右的最大子段，因此要考虑直接返回一个结点</p>
 </li>
-<li><p><a href="https://class.luogu.com.cn/classroom/yugu20ntg2" target="_blank" rel="noopener">TG2 动态规划及优化</a> 1h45min</p>
+<li><blockquote>
+<p>测试数据可能会出现 $a&gt;b$ 的情况，需要进行交换</p>
+</blockquote>
 </li>
-<li><p><a href="https://class.luogu.com.cn/classroom/yugu20ntg3" target="_blank" rel="noopener">TG3 初级数据结构 2</a> 重点看树状数组、线段树（二维）、线段树（扫描线）1h + 2h（练习）</p>
-</li>
-<li><p><a href="https://class.luogu.com.cn/classroom/yugu20ntg4" target="_blank" rel="noopener">TG4 树形问题专题</a> 最后 37min 树链剖分重看 + <a href="https://www.luogu.com.cn/problem/P2590" target="_blank" rel="noopener">树的统计</a> +<a href="https://www.luogu.com.cn/problem/P3384" target="_blank" rel="noopener">【模板】轻重链剖分</a> + <a href="https://www.luogu.com.cn/problem/P2680" target="_blank" rel="noopener">运输计划</a> 37min + 2.5h</p>
+<li><p>没有区间修改可以不用加标记</p>
 </li>
 </ol>
-<ol>
-<li><a href="https://class.luogu.com.cn/classroom/yugu20ntg6" target="_blank" rel="noopener">TG6 简单数论</a> 2h20min + <a href="https://www.luogu.com.cn/training/36162#information" target="_blank" rel="noopener">练习</a> 5h+</li>
-<li><a href="https://class.luogu.com.cn/classroom/yugu20ntg7" target="_blank" rel="noopener">TG7 搜索及剪枝</a> 泛看 1h + <a href="https://www.luogu.com.cn/training/36152#information" target="_blank" rel="noopener">练习</a> 2h</li>
-<li><a href="https://class.luogu.com.cn/classroom/yugu20ntg8" target="_blank" rel="noopener">TG8 图论进阶</a> 连通性相关 1h30min + 分层图（30min）+ 最短路（堆优化Dijkstra + SPFA判负环 + Floyd传递闭包） </li>
-<li><a href="https://class.luogu.com.cn/classroom/yugu20ntg9" target="_blank" rel="noopener">TG9 组合数学及简单计数 </a> 3h30min + <a href="https://www.luogu.com.cn/training/36161" target="_blank" rel="noopener">练习</a> 2h</li>
-</ol>
-<p>注：可以选择性的配合 SF的题单 使用</p>
-<p>每天做题的视频将会被录制同时公示（根据<a href="https://www.luogu.com.cn/blog/LuoguNetSchool/luo-gu-wang-xiao-yong-hu-xie-yi" target="_blank" rel="noopener">洛谷网校用户协议</a>不能录制看课的视频）</p>
+<p>成功的解决了单点修改最大子段，来看看<a href="https://www.luogu.com.cn/problem/P4118" target="_blank" rel="noopener"><del>区间修改最大子段</del></a>吧。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>线段树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P1160 队列安排</title>
+    <url>/2020/11/12/lg1160/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一个学校里老师要将班上 $N$ 个同学排成一列，同学被编号为 $ 1 \sim N$，他采取如下的方法：</p>
+<ol>
+<li>先将 $1$ 号同学安排进队列，这时队列中只有他一个人；</li>
+<li>$2 \sim N$ 号同学依次入列，编号为 $i$ 的同学入列方式为：老师指定编号为 $i$ 的同学站在编号为 $1\sim (i -1)$ 中某位同学（即之前已经入列的同学）的左边或右边；</li>
+<li>从队列中去掉 $M(M&lt;N)$ 个同学，其他同学位置顺序不变。</li>
+</ol>
+<p>在所有同学按照上述方法队列排列完毕后，老师想知道从左到右所有同学的编号。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第 $1$ 行为一个正整数 $N$ ，表示了有 $N$ 个同学。</p>
+<p>第 $2 \sim N$ 行，第 $i$ 行包含两个整数 $k,p$，其中 $k$ 为小于 $i$ 的正整数，$p$ 为 $0$ 或者 $1$。若 $p$ 为00，则表示将 $i$ 号同学插入到 $k$ 号同学的左边，$p$ 为 $1$ 则表示插入到右边。</p>
+<p>第 $N+1$ 行为一个正整数 $M$，表示去掉的同学数目。</p>
+<p>接下来 $M$ 行，每行一个正整数 $x$，表示将 $x$ 号同学从队列中移去，如果 $x$ 号同学已经不在队列中则忽略这一条指令。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>$1$ 行，包含最多 $N$ 个空格隔开的正整数，表示了队列从左到右所有同学的编号，行末换行且无空格。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>使用双向链表模拟即可，注意不要写 <a href="https://www.luogu.com.cn/discuss/show/276680" target="_blank" rel="noopener">ub</a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">d</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">&#125; a[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> v[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> k, p;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    a[<span class="number">1</span>].l = <span class="number">0</span>, a[<span class="number">1</span>].r = <span class="number">100009</span>, a[<span class="number">0</span>].r = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; k &gt;&gt; p;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="number">0</span>)</span><br><span class="line">            a[i].l = a[k].l, a[i].r = k, a[a[k].l].r = i, a[k].l = i;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            a[i].r = a[k].r, a[i].l = k, a[a[k].r].l = i, a[k].r = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">        <span class="keyword">if</span> (!v[k])</span><br><span class="line">            a[a[k].l].r = a[k].r, a[a[k].r].l = a[k].l, v[k] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> bib = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        bib = a[bib].r;</span><br><span class="line">        <span class="keyword">if</span> (bib != <span class="number">100009</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; bib &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>定义链表不存在中的元素时注意数组是否会越界</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>模拟</tag>
+        <tag>双向链表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P1816 忠诚</title>
+    <url>/2020/11/12/lg1816/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>老管家是一个聪明能干的人。他为财主工作了整整 $10$ 年，财主为了让自已账目更加清楚。要求管家每天记 $k$ 次账，由于管家聪明能干，因而管家总是让财主十分满意。但是由于一些人的挑拨，财主还是对管家产生了怀疑。于是他决定用一种特别的方法来判断管家的忠诚，他把每次的账目按 $1,2,3 \cdots$ 编号，然后不定时的问管家问题，问题是这样的：在 $a$ 到 $b$ 号账中最少的一笔是多少？为了让管家没时间作假他总是一次问多个问题。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入中第一行有两个数 $m,n$ 表示有 $m$($m \le 10^5$)笔账,$n$ 表示有 $n$ 个问题，$n \le 10^5$。</p>
+<p>第二行为 $m$ 个数,分别是账目的钱数</p>
+<p>后面 $n$ 行分别是 $n$ 个问题,每行有 $2$ 个数字说明开始结束的账目编号。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出文件中为每个问题的答案。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>当然可以用线段树来维护，但是这里选择树状数组会更加精炼</p>
+<p>当然，树状数组也有其弊端，对于没有被包含的单个节点，就需要一个一个比较了……<span style="color:red">这会大大降低效率！</span> </p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        树状数组
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> t[N], a[N];</span><br><span class="line"><span class="keyword">int</span> x, y;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (x &lt;= n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (t[x] &gt; k)</span><br><span class="line">            t[x] = k;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        x += x &amp; -x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getmin</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">2147483647</span>;</span><br><span class="line">    <span class="keyword">while</span> (y &gt;= x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y - (y &amp; -y) &gt; x) &#123;</span><br><span class="line">            r = min(r, t[y]);</span><br><span class="line">            y -= y &amp; -y;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            r = min(r, a[y]);</span><br><span class="line">            --y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="built_in">memset</span>(t, <span class="number">127</span>, <span class="keyword">sizeof</span>(t));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">        add(i, a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; getmin(x, y) &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+</div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        线段树
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, op, x, y, k;</span><br><span class="line">ll a[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll min_p, sum, tag;</span><br><span class="line">&#125; T[N &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">min</span><span class="params">(ll a, ll b)</span> </span>&#123; <span class="keyword">return</span> a &gt; b ? b : a; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ls</span><span class="params">(ll p)</span> </span>&#123; <span class="keyword">return</span> p &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rs</span><span class="params">(ll p)</span> </span>&#123; <span class="keyword">return</span> p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(ll p)</span> </span>&#123;</span><br><span class="line">    T[p].sum = T[ls(p)].sum + T[rs(p)].sum;</span><br><span class="line">    T[p].min_p = min(T[ls(p)].min_p, T[rs(p)].min_p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(ll p, ll l, ll r)</span> </span>&#123;</span><br><span class="line">    T[p].tag = <span class="number">0</span>;</span><br><span class="line">    T[p].min_p = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">        T[p].min_p = T[p].sum = a[l];</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ll mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    build(ls(p), l, mid);</span><br><span class="line">    build(rs(p), mid + <span class="number">1</span>, r);</span><br><span class="line">    push_up(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_down</span><span class="params">(ll p, ll l, ll r)</span> </span>&#123;</span><br><span class="line">    ll mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    T[ls(p)].sum += T[p].tag * (r - l + <span class="number">1</span>);</span><br><span class="line">    T[ls(p)].tag += T[p].tag;</span><br><span class="line">    T[rs(p)].sum += T[p].tag * (r - l + <span class="number">1</span>);</span><br><span class="line">    T[rs(p)].tag += T[p].tag;</span><br><span class="line">    T[p].tag = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query_min</span><span class="params">(ll q_x, ll q_y, ll l, ll r, ll p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (q_x &lt;= l &amp;&amp; r &lt;= q_y)</span><br><span class="line">        <span class="keyword">return</span> T[p].min_p;</span><br><span class="line">    ll mid = (l + r) &gt;&gt; <span class="number">1</span>, resa = <span class="number">0x3f3f3f3f</span>, resb = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    push_down(p, l, r);</span><br><span class="line">    <span class="keyword">if</span> (q_x &lt;= mid)</span><br><span class="line">        resa = query_min(q_x, q_y, l, mid, ls(p));</span><br><span class="line">    <span class="keyword">if</span> (q_y &gt; mid)</span><br><span class="line">        resb = query_min(q_x, q_y, mid + <span class="number">1</span>, r, rs(p));</span><br><span class="line">    <span class="keyword">return</span> min(resa, resb);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    build(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; query_min(x, y, <span class="number">1</span>, n, <span class="number">1</span>) &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+</div>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>要初始化为最大值</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>线段树</tag>
+        <tag>树状数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P3368 【模板】树状数组 2</title>
+    <url>/2020/11/12/lg3368/</url>
+    <content><![CDATA[<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如题，已知一个数列，你需要进行下面两种操作：</p>
+<ol>
+<li>将某区间每一个数数加上 $x$；</li>
+<li>求出某一个数的值。</li>
+</ol>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含两个整数 $N$、$M$($1 \le N,M \le 5 \times 10^5$)，分别表示该数列数字的个数和操作的总个数。</p>
+<p>第二行包含 $N$ 个用空格分隔的整数，其中第 $i$ 个数字表示数列第 $i$ 项的初始值。</p>
+<p>接下来 $M$ 行每行包含 $2$ 或 $4$ 个整数，表示一个操作，具体如下：</p>
+<p>操作 $1$： 格式：<code>1 x y k</code> 含义：将区间 $[x,y]$ 内每个数加上 $k$；</p>
+<p>操作 $2$： 格式：<code>2 x</code> 含义：输出第 $x$ 个数的值。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出包含若干行整数，即为所有操作 $2$ 的结果。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>树状数组区间修改单点查询模板题，暂无</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> t[N], x, y, k, op, n, m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; x &lt;= n; x += x &amp; -x) t[x] += k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">res</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (; x; x -= x &amp; -x) res += t[x];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; x, add(i, x - y), y = x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; k, add(x, k), add(y + <span class="number">1</span>, -k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x, <span class="built_in">cout</span> &lt;&lt; ask(x) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>差分查询插入时要注意</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>树状数组</tag>
+        <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P3374 【模板】树状数组 1</title>
+    <url>/2020/11/12/lg3374/</url>
+    <content><![CDATA[<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如题，已知一个数列，你需要进行下面两种操作：</p>
+<ul>
+<li>将某一个数加上 $x$</li>
+<li>求出某区间每一个数的和</li>
+</ul>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含两个正整数 $n,m$($1 \le n,m \le 5 \times 10^5$)，分别表示该数列数字的个数和操作的总个数。</p>
+<p>第二行包含 $n$ 个用空格分隔的整数，其中第 $i$ 个数字表示数列第 $i$ 项的初始值。</p>
+<p>接下来 $m$ 行每行包含 $3$ 个整数，表示一个操作，具体如下：</p>
+<ul>
+<li><code>1 x k</code> 含义：将第 $x$ 个数加上 $k$</li>
+<li><code>2 x y</code> 含义：输出区间 $[x,y]$ 内每个数的和</li>
+</ul>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出包含若干行整数，即为所有操作 $2$ 的结果。</p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>树状数组单点修改区间查询模板题，暂无</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> t[N], op, x, y, n, m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; x &lt;= n; x += x &amp; -x) t[x] += k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">res</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (; x; x -= x &amp; -x) res += t[x];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; x, add(i, x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>)</span><br><span class="line">            add(x, y);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ask(y) - ask(x - <span class="number">1</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>前缀和查询是 $r$ 和 $l-1$</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>树状数组</tag>
+        <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P1106 删数问题</title>
+    <url>/2020/11/12/lg1106/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>键盘输入一个高精度的正整数 $N$（不超过 $250$ 位），去掉其中任意 $k$ 个数字后剩下的数字按原左右次序将组成一个新的非负整数。编程对给定的 $N$ 和 $k$，寻找一种方案使得剩下的数字组成的新数最小。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>$n$（高精度的正整数 )。</p>
+<p>$k$（需要删除的数字个数 )。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>最后剩下的最小数。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>首先，直接贪心删去最小的是错的，可以举出反例 $N = 1329, k = 1$ 时答案应该是 $129$ 而不是 $132$。</p>
+<p>考虑去维护一个单调不减栈，每次入栈的时候进行判断，依次删去 $k$ 个不满足不减的元素，可以保证最后一定是最小</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; sta;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">255</span>];</span><br><span class="line"><span class="keyword">int</span> k, idx;</span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">255</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s %d"</span>, s + <span class="number">1</span>, &amp;k);</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len; i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> ( k &amp;&amp; sta.size() &amp;&amp; sta.top() &gt; <span class="number">0</span> &amp;&amp; s[i] - <span class="string">'0'</span> &lt; sta.top() ) sta.pop(), k--;</span><br><span class="line">        sta.push(s[i] - <span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (k-- &amp;&amp; sta.size()) sta.pop();</span><br><span class="line">	<span class="keyword">while</span> (!sta.empty()) &#123;</span><br><span class="line">		ans[++idx] = sta.top();sta.pop();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(ans[idx] == <span class="number">0</span> &amp;&amp; idx) --idx;</span><br><span class="line">	<span class="keyword">if</span>(idx == <span class="number">0</span>) <span class="built_in">puts</span>(<span class="string">"0"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">for</span>(<span class="keyword">int</span> i=idx;i&gt;=<span class="number">1</span>;i--) <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>注意到第 11 行 <code>k &amp;&amp; sta.size() &amp;&amp; sta.top() &gt; 0 &amp;&amp; s[i] - &#39;0&#39; &lt; sta.top()</code> 中 <code>sta.size()</code> 和 <code>sta.top()</code> 不能反过来，否则 RE</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>贪心</tag>
+        <tag>单调栈</tag>
+      </tags>
   </entry>
   <entry>
     <title>赛前冲刺日志</title>
@@ -148,8 +306,8 @@
       </categories>
       <tags>
         <tag>图论</tag>
-        <tag>网络流</tag>
         <tag>最近公共祖先</tag>
+        <tag>网络流</tag>
         <tag>倍增</tag>
         <tag>二分图</tag>
         <tag>重链剖分</tag>
@@ -228,9 +386,9 @@
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数学</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -498,7 +656,7 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
   </entry>
   <entry>
     <title>2月flag汇总</title>
-    <url>/2020/05/01/2%E6%9C%88flag%E6%B1%87%E6%80%BB/2%E6%9C%88flag%E6%B1%87%E6%80%BB/</url>
+    <url>/2020/05/01/2%E6%9C%88flag%E6%B1%87%E6%80%BB/</url>
     <content><![CDATA[<blockquote>
 <p><del>精彩打脸合集</del></p>
 </blockquote>
@@ -525,7 +683,7 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
   </entry>
   <entry>
     <title>Codeforces Round 636 (Div. 3)</title>
-    <url>/2020/04/26/cf/Codeforces%20Round%20636%20(Div.%203)/</url>
+    <url>/2020/04/26/cf1343/</url>
     <content><![CDATA[<blockquote>
 <p>日常三题选手…</p>
 <p><img src="https://cdn.jsdelivr.net/gh/BoringHacker/cdn/emojis/majsoul/maj-38.png" alt=""></p>
@@ -547,14 +705,14 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数学</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
     <title>Codeforces Round 635 (Div. 2)</title>
-    <url>/2020/04/24/cf/Codeforces%20Round%20635%20(Div.%202)/</url>
+    <url>/2020/04/24/cf1337/</url>
     <content><![CDATA[<blockquote>
 <p>中国场！莫名的激动。题目的风格真的和出题人有关，<del>虽然我只做了三题</del></p>
 </blockquote>
@@ -584,13 +742,13 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
     <title>Codeforces Round 633 (Div. 2)</title>
-    <url>/2020/04/24/cf/Codeforces%20Round%20633%20(Div.%202)/</url>
+    <url>/2020/04/24/cf1339/</url>
     <content><![CDATA[<blockquote>
 <p>可能是到目前为止最成功的一次 cf 了，下次要做到没人带我也这么强。</p>
 </blockquote>
@@ -623,7 +781,7 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
   </entry>
   <entry>
     <title>区间DP的一些理解</title>
-    <url>/2020/04/17/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/</url>
+    <url>/2020/04/17/%E5%8C%BA%E9%97%B4DP%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<blockquote>
 <p>区间$\text{DP}$比线性$\text{DP}$好想一些。</p>
 </blockquote>
@@ -744,7 +902,7 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
   </entry>
   <entry>
     <title>Codeforces Round 629 (Div. 3)</title>
-    <url>/2020/03/27/cf/Codeforces%20Round%20629%20(Div.%203)/</url>
+    <url>/2020/03/27/cf1328/</url>
     <content><![CDATA[<h2 id="A-Divisibility-Problem"><a href="#A-Divisibility-Problem" class="headerlink" title="A Divisibility Problem"></a><a href="https://www.luogu.com.cn/problem/CF1328A" target="_blank" rel="noopener">A Divisibility Problem</a></h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定两个正整数 $a$ 和 $b$，你可以在一步操作中将 $a$ 加上 $1$。你需要找到最少需要多少步操作可以使得 $a \mid b $。存在最开始就满足 $a \mid b$ 的可能从而只需要 $0$ 步操作。</p>
 <a id="more"></a>
 <h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行一个正整数 $t( 1 \le t \le 10^4)$。</p>
@@ -813,13 +971,13 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
     <title>P6236 [COCI2010-2011] LJUTNJA</title>
-    <url>/2020/03/25/lg6236/lg6236/</url>
+    <url>/2020/03/25/lg6236/</url>
     <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P6236" target="_blank" rel="noopener">原题链接</a></p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>幼儿园的小孩们收到了一个有 $m$ 颗糖果的大包裹，现在要把这些糖果分给 $n$ 个小孩。</p>
 <p>每一个小孩都给出了一个期望的糖果数，如果没有达到他的期望值 $a_i$，小孩就会生气。每差一个糖果，小孩的生气指数就会增加，可以认为他生气的程度等于他少得到的糖果数的平方。</p>
@@ -867,7 +1025,7 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
   </entry>
   <entry>
     <title>第一次CF比赛</title>
-    <url>/2020/03/24/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/</url>
+    <url>/2020/03/24/%E7%AC%AC%E4%B8%80%E6%AC%A1CF%E6%AF%94%E8%B5%9B/</url>
     <content><![CDATA[<p>CF上的题目确实值得一做，打比赛是提升代码水平的好方法。</p>
 <a id="more"></a>
 <h2 id="参赛感想"><a href="#参赛感想" class="headerlink" title="参赛感想"></a>参赛感想</h2><p>​    我参加的第一场 CF 比赛是 Educational Codeforces Round 84 (Rated for Div. 2)。我很早就注册了CF账号，但是打比赛还是第一次。原先总觉得CF的题都好难，实际上真正去做的时候发现自己只要有时间还是可以做出来几题的。CF的题目是典型的思维题，没有思维很难想到。最终的码量都不会很大（这让我在最后时刻抢着把 B 题做完了）。（非常感谢 too_late 对我的鼓励）</p>
@@ -992,14 +1150,14 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
   <entry>
     <title>生动形象的理解二维前缀和</title>
-    <url>/2020/03/15/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/</url>
+    <url>/2020/03/15/%E7%94%9F%E5%8A%A8%E5%BD%A2%E8%B1%A1%E7%9A%84%E7%90%86%E8%A7%A3%E4%BA%8C%E7%BB%B4%E5%89%8D%E7%BC%80%E5%92%8C/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在<a href="https://answerend42.github.io/Answerend42.github.io/2020/03/08/P6180%20%E3%80%90%5BUSACO15DEC%5DBreed%20Counting%20S%E3%80%91/P6180%20%E3%80%90%5BUSACO15DEC%5DBreed%20Counting%20S%E3%80%91/">P6180 【[USACO15DEC]Breed Counting S】</a>这篇文章中，我介绍并使用了前缀和的方法来通过该题，这次来讲前缀和的扩展——二维前缀和。</p>
 <a id="more"></a>
 <h2 id="什么是二维前缀和"><a href="#什么是二维前缀和" class="headerlink" title="什么是二维前缀和"></a>什么是二维前缀和</h2><p>首先，并不是针对二维数组中的每一横行作前缀和。</p>
@@ -1033,7 +1191,7 @@ b_{x,y}=b_{x-1,y}+b_{x,y-1}-b_{x-1,y-1}+a_{x,y}</script><h3 id="如何使用"><a
   </entry>
   <entry>
     <title>P1434 [SHOI2002]滑雪</title>
-    <url>/2020/03/11/lg1434/lg1434/</url>
+    <url>/2020/03/11/lg1434/</url>
     <content><![CDATA[<p> <a href="https://www.luogu.org/problemnew/show/P1434" target="_blank" rel="noopener">原题链接</a></p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>​    Michael 喜欢滑雪。这并不奇怪，因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael 想知道在一个区域中最长的滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。下面是一个例子：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1   2   3   4   5</span><br><span class="line">16  17  18  19  6</span><br><span class="line">15  24  25  20  7</span><br><span class="line">14  23  22  21  8</span><br><span class="line">13  12  11  10  9</span><br></pre></td></tr></table></figure>
@@ -1061,14 +1219,14 @@ b_{x,y}=b_{x-1,y}+b_{x,y-1}-b_{x-1,y-1}+a_{x,y}</script><h3 id="如何使用"><a
         <category>题解</category>
       </categories>
       <tags>
-        <tag>深度优先搜索dfs</tag>
         <tag>搜索</tag>
+        <tag>深度优先搜索dfs</tag>
         <tag>记忆化搜索</tag>
       </tags>
   </entry>
   <entry>
     <title>P1135 奇怪的电梯</title>
-    <url>/2020/03/11/lg1135/lg1135/</url>
+    <url>/2020/03/11/lg1135/</url>
     <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1135" target="_blank" rel="noopener">原题链接</a></p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>​    呵呵，有一天我做了一个梦，梦见了一种很奇怪的电梯。大楼的每一层楼都可以停电梯，而且第 $i$ 层楼$(1 \le i \le N)$ 上有一个数字 $K_i(0 \le K_i \le N)$。电梯只有四个按钮：开，关，上，下。上下的层数等于当前楼层上的那个数字。当然，如果不能满足要求，相应的按钮就会失灵。例如： $3, 3 ,1 ,2 ,5$ 代表了$K_i(K_1=3,K_2=3,…)$，从 $1$ 楼开始。在 $1$ 楼，按“上”可以到 $4$ 楼，按“下”是不起作用的，因为没有 $-2$ 楼。那么，从 $A$ 楼到 $B$ 楼至少要按几次按钮呢？</p>
 <a id="more"></a>
@@ -1095,7 +1253,7 @@ b_{x,y}=b_{x-1,y}+b_{x,y-1}-b_{x-1,y-1}+a_{x,y}</script><h3 id="如何使用"><a
   </entry>
   <entry>
     <title>P1057 传球游戏</title>
-    <url>/2020/03/09/lg1057/lg1057/</url>
+    <url>/2020/03/09/lg1057/</url>
     <content><![CDATA[<h2 id="题意简述"><a href="#题意简述" class="headerlink" title="题意简述"></a>题意简述</h2><p>​    有 $n$ 个人围坐成环，从 $1$ 开始传递，每次可将球传给相邻的人，问 $m$ 次传递后回到 $1$ 的方案数。</p>
 <a id="more"></a>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>​    这一题很容易想到用搜索算法，但是会超时。我们不妨这样想，如果存在 $m$ 次传递后回到 $1$ 的情况，也就是意味着 $m-1$ 次传递到了 $n$ 或者 $2$ ， $m-2$ 次传递到了 $n-1$ 或者 $3$ 或者 $1$ 。我们就可以脑洞大开一下，求解传递 $k$ 次到 $p$ 的方案数，不就是传递 $k-1$ 次到 $p-1$ 和 $p+1$ 的方案数之和吗？（当然， $p=1$ 时是 $n$ 和 $2$ ）这就是状态的转移。</p>
@@ -1117,7 +1275,7 @@ f_{i,j}&=f_{i-1,j-1}+f_{1,j-1} (i=n)
   </entry>
   <entry>
     <title>P6180 【[USACO15DEC]Breed Counting S】</title>
-    <url>/2020/03/08/lg6180/lg6180/</url>
+    <url>/2020/03/08/lg6180/</url>
     <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P6180" target="_blank" rel="noopener">原题链接</a></p>
 <h2 id="题意简述"><a href="#题意简述" class="headerlink" title="题意简述"></a>题意简述</h2><p>  给出 $n$ 头奶牛，每头可分为三种，对于 $q$ 次询问，给出区间内各种奶牛的数量。</p>
 <a id="more"></a>
@@ -1151,7 +1309,7 @@ b_{l-1}=\sum_{i=1}^{l-1}a_i</script><p>注意，一定是 $l-1$ 如果是 $l$ �
   </entry>
   <entry>
     <title>二月做题记录</title>
-    <url>/2020/03/03/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <url>/2020/03/03/%E4%BA%8C%E6%9C%88%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h2 id="2月2日"><a href="#2月2日" class="headerlink" title="2月2日"></a>2月2日</h2><p><a href="https://www.luogu.com.cn/problem/P3372" target="_blank" rel="noopener">P3372 【模板】线段树 1</a></p>
 <p>​    初见线段树感觉是真的不会，多打几次就熟练了</p>
 <h2 id="2月3日"><a href="#2月3日" class="headerlink" title="2月3日"></a>2月3日</h2><p><a href="https://www.luogu.com.cn/problem/P3133" target="_blank" rel="noopener">P3133 [USACO16JAN]Radio Contact G</a></p>
@@ -1240,8 +1398,8 @@ b_{l-1}=\sum_{i=1}^{l-1}a_i</script><p>注意，一定是 $l-1$ 如果是 $l$ �
       </tags>
   </entry>
   <entry>
-    <title>【模板】最近公共祖先（LCA）</title>
-    <url>/2020/03/01/lg3379/lg3379/</url>
+    <title>P3379 【模板】最近公共祖先（LCA）</title>
+    <url>/2020/03/01/lg3379/</url>
     <content><![CDATA[<p>update on 2020.4.5 新增 tarjan 算法。</p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    LCA（Lowest Common Ancestor），即最近公共祖先。在一张图中，要找到两个节点的最近公共祖先，最朴素的算法就是分别从两个节点一层一层向上寻找，直到跳到一个相同的点，这个点就是两者的最近公共祖先。这样查找花费的时间代价太大，我们难以承受，于是就有了几种求LCA的算法。</p>
 <a id="more"></a>
@@ -1303,8 +1461,46 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
         <category>题解</category>
       </categories>
       <tags>
-        <tag>最近公共祖先</tag>
         <tag>模板</tag>
+        <tag>最近公共祖先</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P1009 阶乘之和</title>
+    <url>/2020/02/21/lg1009/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
+<p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
+<p>​    提交，Judge，一气呵成。</p>
+<p><img src="https://pic.downk.cc/item/5e4f813b48b86553ee32c0fd.png" alt=""></p>
+<p>​    然而50Pts…</p>
+<a id="more"></a>
+<h2 id="找锅"><a href="#找锅" class="headerlink" title="找锅"></a>找锅</h2><p>​    明显的，程序出了锅。</p>
+<blockquote>
+<p>怀疑并不是缺点。总是疑，而并不下断语，这才是缺点。    ——鲁迅</p>
+</blockquote>
+<p>​    为什么会 Wa 呢，这是因为数据范围 $n \leq50$ 实际验算确认，unsigned long long最大可储存的阶乘是 $20!$</p>
+<p>,当计算 $21!$​ 时，就出现了溢出的错误。</p>
+<h2 id="修锅"><a href="#修锅" class="headerlink" title="修锅"></a>修锅</h2><p>​    是时候介绍主角——高精度了。高精度适用于无法直接用类型储存的数值计算，计算方式类似于竖式算法。竖式算法是通过同一位的两数加减乘除后进位的算法。</p>
+<p><img src="https://oi-wiki.org/math/images/plus.png" alt=""></p>
+<p>​                                                                                                                                                                        图源自OI wiki</p>
+<h3 id="储存方式"><a href="#储存方式" class="headerlink" title="储存方式"></a>储存方式</h3><p>​    既然不能用一种类型储存，很自然让人想到字符串(string)，因为string可以动态扩容。但其实string的本质也就是一个数组，而高精度需要储存的都是数字，为什么不用整形(int)数组呢？如果用了int，却无法估计最终会有多少位数时，不妨动态扩容，也就是使用vector作为基类。一阵分析后，我们开始用vector。</p>
+<p>​    竖式运算中由最低位向最高位逐步计算，但是不能估计最高位是否可能进位，vector的扩容是向后的，即越后的数越后出现，那么较低位的数就理所应当先出现，这就需要逆序储存到vector。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=s.size()<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	v.push_back(s[i]-<span class="string">'0'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="计算方式"><a href="#计算方式" class="headerlink" title="计算方式"></a>计算方式</h3><h4 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">add</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(A.size()&lt;B.size())	<span class="keyword">return</span> add(B,A);</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;C;</span><br><span class="line">	<span class="keyword">int</span> t=<span class="number">0</span>,len=A.size();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=len;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		t+=A[i];</span><br><span class="line">		<span class="keyword">if</span>(i&lt;B.size())	t+=B[i];</span><br><span class="line">		C.push_back(t%<span class="number">10</span>);</span><br><span class="line">		t/=<span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(t)	C.push_back(t);</span><br><span class="line">	<span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    首先需要判断A和B谁位数更大，这里让A的位数始终大于B。因为A的位数更大，保证每一位加法都可以有A的这一位参与其中，但B就不一定了，正如上例中百位数只有A的9参与了计算。同时在计算每一位的和之后将该值对10取模（模拟进位过程），然后将该值除以10，最后判断最后一位是否需要进位，如果需要就将最后一位加入，最终返回一个vector。</p>
+<h4 id="乘法-高精度乘以低精度"><a href="#乘法-高精度乘以低精度" class="headerlink" title="乘法 高精度乘以低精度"></a>乘法 高精度乘以低精度</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;C;</span><br><span class="line">	<span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;A.size()||t;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i&lt;A.size())	t+=A[i]*b;</span><br><span class="line">		C.push_back(t%<span class="number">10</span>);</span><br><span class="line">		t/=<span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（作者并不会高精度乘以高精度，以后再更）</p>
+<p>​    和加法类似，同样是每一位乘以b之后对10取模（进位）。值得一提的是这条语句<code>i&lt;A.size()||t</code>因为乘法运算进位有可能不止一位，要考虑t不断进位的情况。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>​    有了以上步骤，我们可以很快打出本题代码。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a, b, ans;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">mul</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.size() || t; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; A.size())</span><br><span class="line">            t += A[i] * b;</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">add</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;B)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.size() &lt; B.size())</span><br><span class="line">        <span class="keyword">return</span> add(B, A);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; C;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>, len = A.size();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= len; i++) &#123;</span><br><span class="line">        t += A[i];</span><br><span class="line">        <span class="keyword">if</span> (i &lt; B.size())</span><br><span class="line">            t += B[i];</span><br><span class="line">        C.push_back(t % <span class="number">10</span>);</span><br><span class="line">        t /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t)</span><br><span class="line">        C.push_back(t);</span><br><span class="line">    <span class="keyword">return</span> C;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        a.clear();</span><br><span class="line">        a.push_back(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</span><br><span class="line">            b = mul(a, j);</span><br><span class="line">            a = b;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = add(ans, a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = ans.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) <span class="built_in">cout</span> &lt;&lt; ans[i];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    题解到这里就结束了，以下是一些作者的题外话。</p>
+<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>​    本题是 noip 1999 的题目，当时的竞赛不分普及组和提高组，可以使用的语言包括 basic ，方便好用的 stl 也没有解禁，甚至于整个中国也没有现在如此之多的 OIer 为了理想而奋斗。现如今的 OI 风雨交加，会有很多很多的 OIer 们因为现实不得不退役，但我认为在 OI 赛场上奋力拼搏，勤恳训练的日子会为所有参加竞赛、热爱竞赛的人留下永恒难忘的回忆。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>高精度</tag>
       </tags>
   </entry>
   <entry>
@@ -1347,7 +1543,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P3372 【模板】线段树 1</title>
-    <url>/2020/02/20/lg3372/lg3372/</url>
+    <url>/2020/02/20/lg3372/</url>
     <content><![CDATA[<blockquote>
 <p>线段树是算法竞赛中常用的用来维护 <strong>区间信息</strong> 的数据结构。</p>
 <p>线段树可以在$\mathcal{O}(log N)$的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。</p>
@@ -1413,13 +1609,13 @@ p<<1|1 \iff (p<<1)+1</script><h3 id="向上传递参数"><a href="#向上传递�
         <category>题解</category>
       </categories>
       <tags>
-        <tag>模板</tag>
         <tag>线段树</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
     <title>P1352 没有上司的舞会</title>
-    <url>/2020/02/17/lg1352/lg1352/</url>
+    <url>/2020/02/17/lg1352/</url>
     <content><![CDATA[<p>​    以此题作为树形DP的入门。</p>
 <blockquote>
 <p>树形 DP，即在树上进行的 DP。由于树固有的递归性质，树形 DP 一般都是递归进行的。——OI Wiki</p>
