@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>P2831 愤怒的小鸟</title>
+    <url>/2020/11/15/lg2831/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><code>Kiana</code> 最近沉迷于一款神奇的游戏无法自拔。</p>
+<p>简单来说，这款游戏是在一个平面上进行的。</p>
+<p>有一架弹弓位于 $(0,0)$ 处，每次 <code>Kiana</code> 可以用它向第一象限发射一只红色的小鸟，小鸟们的飞行轨迹均为形如 $y=ax^2+bx$ 的曲线，其中 $a,b$ 是 <code>Kiana</code> 指定的参数，且必须满足 $a &lt; 0$，$a,b$ 都是实数。</p>
+<p>当小鸟落回地面（即 $x$ 轴）时，它就会瞬间消失。</p>
+<p>在游戏的某个关卡里，平面的第一象限中有 $n$ 只绿色的小猪，其中第 $i$ 只小猪所在的坐标为 $\left(x_i,y_i \right)$。</p>
+<p>如果某只小鸟的飞行轨迹经过了 $\left( x_i, y_i \right)$，那么第 $i$ 只小猪就会被消灭掉，同时小鸟将会沿着原先的轨迹继续飞行；</p>
+<p>如果一只小鸟的飞行轨迹没有经过 $\left( x_i, y_i \right)$，那么这只小鸟飞行的全过程就不会对第 $i$ 只小猪产生任何影响。</p>
+<p>例如，若两只小猪分别位于 $(1,3)$ 和 $(3,3)$，<code>Kiana</code> 可以选择发射一只飞行轨迹为 $y=-x^2+4x$ 的小鸟，这样两只小猪就会被这只小鸟一起消灭。</p>
+<p>而这个游戏的目的，就是通过发射小鸟消灭所有的小猪。</p>
+<p>这款神奇游戏的每个关卡对 <code>Kiana</code>来说都很难，所以<code>Kiana</code>还输入了一些神秘的指令，使得自己能更轻松地完成这个游戏。这些指令将在【输入格式】中详述。</p>
+<p>假设这款游戏一共有 $T$ 个关卡，现在 <code>Kiana</code>想知道，对于每一个关卡，至少需要发射多少只小鸟才能消灭所有的小猪。由于她不会算，所以希望由你告诉她。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包含一个正整数 $T$，表示游戏的关卡总数。</p>
+<p>下面依次输入这 $T$ 个关卡的信息。每个关卡第一行包含两个非负整数 $n,m$，分别表示该关卡中的小猪数量和 Kiana 输入的神秘指令类型。接下来的 $n$ 行中，第 $i$ 行包含两个正实数 $x_i,y_i$，表示第 $i$ 只小猪坐标为 $(x_i,y_i)$。数据保证同一个关卡中不存在两只坐标完全相同的小猪。</p>
+<p>如果 $m=0$，表示 <code>Kiana</code> 输入了一个没有任何作用的指令。</p>
+<p>如果 $m=1$，则这个关卡将会满足：至多用 $\lceil n/3 + 1 \rceil$ 只小鸟即可消灭所有小猪。</p>
+<p>如果 $m=2$，则这个关卡将会满足：一定存在一种最优解，其中有一只小鸟消灭了至少 $\lfloor n/3 \rfloor$ 只小猪。</p>
+<p>保证 $1\leq n \leq 18$，$0\leq m \leq 2$，$0 &lt; x_i,y_i &lt; 10$，输入中的实数均保留到小数点后两位。</p>
+<p>上文中，符号 $\lceil c \rceil$ 和 $\lfloor c \rfloor$ 分别表示对 $c$ 向上取整和向下取整，例如：$\lceil 2.1 \rceil = \lceil 2.9 \rceil = \lceil 3.0 \rceil = \lfloor 3.0 \rfloor = \lfloor 3.1 \rfloor = \lfloor 3.9 \rfloor = 3$。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对每个关卡依次输出一行答案。</p>
+<p>输出的每一行包含一个正整数，表示相应的关卡中，消灭所有小猪最少需要的小鸟数量。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这是一道十足的搜索好题，可以用于练习 bfs。</p>
+<p>首先做简单的数学推导，推出经过 $(x_1,y_1)$，$(x_2,y_2)$ 的抛物线</p>
+<script type="math/tex; mode=display">
+f(x_1) = y_1 = ax_1^2 + bx_1 \\ 
+f(x_2) = y_2 = ax_2^2 + bx_2 \\
+a = \dfrac{y_1 - bx_1}{x_1^2} = \dfrac{y_2 - bx_2}{x_2^2} \\
+b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示第 $i$ 个猪是否被打到（状态压缩）</p>
+<p>每次通过极角序排序每个点，作为枚举顺序，最后 $\mathcal{O}(2^n)$ 枚举 $\mathcal{O}(n^2)$ 查询，最终时间复杂度 $\mathcal{O}(2^nn^2)$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXP = (<span class="number">1</span> &lt;&lt; MAXN) + <span class="number">20</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> db eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> &#123;</span></span><br><span class="line">    db x, y;</span><br><span class="line">    Point(db _x = <span class="number">0</span>, db _y = <span class="number">0</span>) : x(_x), y(_y) &#123;&#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Point &amp;rhs) <span class="keyword">const</span> &#123; <span class="keyword">return</span> y * rhs.x &lt; rhs.y * x; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> n, m, _;</span><br><span class="line"><span class="keyword">int</span> d[MAXP];</span><br><span class="line">Point pigs[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">(db &amp;a, db &amp;b, db x1, db y1, db x2, db y2)</span> </span>&#123;</span><br><span class="line">    b = (y1 * x2 * x2 - y2 * x1 * x1) / x1 / x2 / (x2 - x1);</span><br><span class="line">    a = (y1 - b * x1) / x1 / x1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> q[MAXP], qhead = <span class="number">0</span>, qtail = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// bfs 加入新的状态</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">extend</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (d[v] == INF) &#123;</span><br><span class="line">        d[v] = d[u] + <span class="number">1</span>;</span><br><span class="line">        q[qtail++] = v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    d[s] = <span class="number">0</span>;</span><br><span class="line">    qhead = qtail = <span class="number">0</span>;</span><br><span class="line">    q[qtail++] = s;</span><br><span class="line">    <span class="keyword">while</span> (qhead != qtail) &#123;</span><br><span class="line">        <span class="keyword">int</span> now = q[qhead++];</span><br><span class="line">        <span class="keyword">if</span> (now == (<span class="number">1</span> &lt;&lt; n) - <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> d[now];</span><br><span class="line">        <span class="keyword">int</span> p0 = <span class="number">0</span>;  <span class="comment">// 当前第一只没有被打到的猪</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> t = now; t &amp; <span class="number">1</span>; t &gt;&gt;= <span class="number">1</span>) p0++;</span><br><span class="line">        extend(now, now | (<span class="number">1</span> &lt;&lt; p0));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = p0 + <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            db a, b;</span><br><span class="line">            <span class="comment">// 极角排序后不能打出向上的曲线</span></span><br><span class="line">            <span class="keyword">if</span> (pigs[i].x + <span class="number">0.0001</span> &gt; pigs[p0].x)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">// 也不能是一条直线</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">fabs</span>(pigs[i].x / pigs[i].y - pigs[p0].x / pigs[p0].y) &lt; eps)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            solve(a, b, pigs[p0].x, pigs[p0].y, pigs[i].x, pigs[i].y);</span><br><span class="line">            <span class="comment">// p0 和 i 代表的猪我们都打到了</span></span><br><span class="line">            <span class="keyword">int</span> to = now | (<span class="number">1</span> &lt;&lt; p0) | (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">            <span class="comment">// 找一找有没有恰好也被我们打到的猪</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                db delta = <span class="built_in">fabs</span>(a * pigs[j].x * pigs[j].x + b * pigs[j].x - pigs[j].y);</span><br><span class="line">                <span class="keyword">if</span> (delta &lt; eps) &#123;</span><br><span class="line">                    to |= <span class="number">1</span> &lt;&lt; j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            extend(now, to);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;_); _; _--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">        <span class="built_in">memset</span>(d, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(d));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            db x, y;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>, &amp;x, &amp;y);</span><br><span class="line">            pigs[i] = Point(x, y);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(pigs, pigs + n);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, bfs(<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>抛物线<span style = "color:red">不能</span>是上凸的</li>
+<li>抛物线<span style = "color:red">不能</span>是一条直线</li>
+<li><p>要检查是否有本身不准备打但是最后经过了的猪</p>
+</li>
+<li><p>多组数据要清空</p>
+</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+        <tag>状压DP</tag>
+        <tag>广度优先搜索bfs</tag>
+        <tag>记忆化搜索</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>P4513 小白逛公园</title>
     <url>/2020/11/12/lg4513/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在小新家附近有一条“公园路”，路的一边从南到北依次排着 $n$ 个公园，小白早就看花了眼，自己也不清楚该去哪些公园玩了。  </p>
@@ -386,9 +437,9 @@
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>构造</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
+        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
@@ -705,9 +756,9 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>构造</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
+        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
@@ -742,8 +793,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>构造</tag>
         <tag>贪心</tag>
+        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
@@ -971,8 +1022,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -1150,8 +1201,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
