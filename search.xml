@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>P7100 [w3R1] 团</title>
+    <url>/2020/11/22/lg7100/</url>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P7100" target="_blank" rel="noopener">原题链接</a></p>
+<p><a href="https://www.luogu.com.cn/blog/220037/w33z-round-1-ti-xie" target="_blank" rel="noopener">官方题解</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>我有一张 $n$ 个节点的无向边带权图。它的边很多，用这个方法表示：</p>
+<ul>
+<li>有 $k$ 个集合；第 $i$ 个集合可以表示为 $S<em>i={(T_1,W_1),(T_2,W_2),\dots,(T</em>{|S<em>i|},W</em>{|S_i|})}$。</li>
+<li>对于任何两对 $(T_i,W_i),(T_j,W_j)$ 在同一个集合里面，图中会形成一条连 $T_i$ 和 $T_j$ 的边，边权为 $W_i+W_j$。</li>
+</ul>
+<p>请对于所有节点 $i$ 找到 $1$ 到 $i$ 的最短路，即从 $1$ 到 $i$ 的边权和最小的简单路径。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行两个正整数 $n,k$。<br>接下来描述 $k$ 个集合。<br>第 $i$ 集合的描述的第一行一个正整数 $|S_i|$，表示 $|S_i|$ 的大小。<br>接下来 $S_i$ 行，每行两个正整数 $t,w$，表示 $(t,w)\in S_i$。</p>
+<p>对于前 $10\%$ 的数据，$|S_i|=2$；<br>对于前 $20\%$ 的数据，$|S_i|\le10$；<br>对于前 $50\%$ 的数据，$|N|\le1000,\sum|S_i|\le2000$；<br>对于 $100\%$ 的数据，$1\le|N|\le2\cdot10^5,\sum|S_i|\le4\cdot10^5,0\le W_i\le10^9$。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一行 $n$ 个正整数；第 $i$ 个正整数表示 $1$ 到 $i$ 的最短路长度。如果不存在一条路径，输出 $\textsf{0x3f3f3f3f3f3f3f3f}=4557430888798830399$。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><ol>
+<li><p>暴力建图，跑 Dijkstra，可以通过前 $50\%$ 的数据</p>
+</li>
+<li><p>对于 $100\%$ 的数据，仍然使用暴力建图并采用优先队列优化的 Dijkstra 就是 $\mathcal{O}(\sum |S^2_i| \log \sum |S^2_i|)$ 的复杂度，不能接受，考虑如何优化建图。</p>
+<p>每个集合中所有点总要两两连边，这样是 $|S^2| - |S|$ 的边数，将其转换一下，对于每一个集合设立一个中间点，所有的点 $T_i$ 向其连一条边权为 $W_i$ 的边，和原图实际上是等价的。</p>
+<p>以样例为例：</p>
+<p><img src="https://i.loli.net/2020/11/22/UpRceOrI4JZdz8H.png" alt="优化前的原图"></p>
+<p><img src="https://i.loli.net/2020/11/22/cztZGfCdMI87rLn.png" alt="优化建图后(6,7为中间点)"></p>
+</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">4e5</span> + <span class="number">5</span>, M = N &lt;&lt; <span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> ll INF = <span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> tot, head[N], to[M], nxt[M];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line">ll cst[M], dis[N], b[N];</span><br><span class="line"><span class="keyword">int</span> n, k, siz, x;</span><br><span class="line">ll y;</span><br><span class="line"><span class="keyword">int</span> Mid;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    ll x, dis;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Node &amp;rhs) <span class="keyword">const</span> &#123; <span class="keyword">return</span> rhs.dis &lt; dis; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, ll z)</span> </span>&#123; to[++tot] = y, cst[tot] = z, nxt[tot] = head[x], head[x] = tot; &#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dij</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;Node&gt; q;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= Mid; i++) dis[i] = INF;</span><br><span class="line">    dis[u] = <span class="number">0</span>;</span><br><span class="line">    q.push(Node&#123; u, <span class="number">0</span> &#125;);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> t = q.top().x;</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span> (vis[t]) <span class="keyword">continue</span>;</span><br><span class="line">        vis[t] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[t]; i; i = nxt[i]) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = to[i];</span><br><span class="line">            <span class="keyword">if</span> (dis[v] &gt; dis[t] + cst[i]) &#123;</span><br><span class="line">                dis[v] = dis[t] + cst[i];</span><br><span class="line">                <span class="keyword">if</span> (!vis[v]) q.push(Node&#123; v, dis[v] &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    Mid = n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; siz;</span><br><span class="line">        Mid++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= siz; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; b[j];</span><br><span class="line">            add(x, Mid, b[j]);</span><br><span class="line">            add(Mid, x, b[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dij(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cout</span> &lt;&lt; dis[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>本题<strong>需要</strong> long long</li>
+<li>图<strong>不一定</strong>联通</li>
+<li>每一个集合的中间点都是<strong>不同</strong>的（代码中用 $n+1 \sim n+k$ 表示）</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>最短路</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P1226 【模板】快速幂||取余运算</title>
+    <url>/2020/11/21/lg1226/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你三个整数 $b,p,k$，求 $b^p \bmod k$。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入只有一行三个整数，分别代表 $b,p,k$</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行一个字符串 <code>b^p mod k=s</code>，其中 $b, p, k$($0 \le b,p &lt; 2^{31},1 \le k \le 2^{31}$) 分别为题目给定的值，$s$ 为运算结果。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>如此巨大的数据，当然不能直接暴力，考虑幂次方的性质，要求 $a^4$ 相当于求出 ${a^2}^2$，以此类推，对 $b$ 作二进制分解，只用求出二进制位上为 $1$ 的位之积就是答案</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll b, p, k;</span><br><span class="line"><span class="function">ll <span class="title">fast_pow</span><span class="params">(ll b, ll p, ll k)</span> </span>&#123;</span><br><span class="line">    ll res = <span class="number">1</span> % k;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>)</span><br><span class="line">            res = res * b % k;</span><br><span class="line">        b = b * b % k;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>, &amp;b, &amp;p, &amp;k);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld^%lld mod %lld=%lld"</span>, b, p, k, fast_pow(b, p, k));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>数据经过更新，要考虑 $k = 1$ 的情况所以 <code>res = 1 % k</code></li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>P2831 愤怒的小鸟</title>
     <url>/2020/11/15/lg2831/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><code>Kiana</code> 最近沉迷于一款神奇的游戏无法自拔。</p>
@@ -159,8 +218,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
         <category>题解</category>
       </categories>
       <tags>
-        <tag>线段树</tag>
         <tag>树状数组</tag>
+        <tag>线段树</tag>
       </tags>
   </entry>
   <entry>
@@ -187,8 +246,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
         <category>题解</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>模板</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -217,8 +276,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
         <category>题解</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>模板</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -437,9 +496,9 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
       </categories>
       <tags>
         <tag>模拟</tag>
+        <tag>构造</tag>
         <tag>数学</tag>
         <tag>贪心</tag>
-        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
@@ -756,9 +815,9 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
+        <tag>构造</tag>
         <tag>数学</tag>
         <tag>贪心</tag>
-        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
@@ -793,8 +852,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -1660,8 +1719,8 @@ p<<1|1 \iff (p<<1)+1</script><h3 id="向上传递参数"><a href="#向上传递�
         <category>题解</category>
       </categories>
       <tags>
-        <tag>线段树</tag>
         <tag>模板</tag>
+        <tag>线段树</tag>
       </tags>
   </entry>
   <entry>
