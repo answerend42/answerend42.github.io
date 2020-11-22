@@ -18,7 +18,7 @@
 <li><p>暴力建图，跑 Dijkstra，可以通过前 $50\%$ 的数据</p>
 </li>
 <li><p>对于 $100\%$ 的数据，仍然使用暴力建图并采用优先队列优化的 Dijkstra 就是 $\mathcal{O}(\sum |S^2_i| \log \sum |S^2_i|)$ 的复杂度，不能接受，考虑如何优化建图。</p>
-<p>每个集合中所有点总要两两连边，这样边数是 $|S^2| - |S|$ 的（$\dfrac{|S| \times (|S|-1)}{2} \times 2$），将其转换一下，对于每一个集合设立一个中间点，所有的点 $T_i$ 向其连一条边权为 $W_i$ 的边，和原图实际上是等价的，边数变成了 $2|S|$。</p>
+<p>每个集合中所有点总要两两连边，这样边数是 $|S^2| - |S|$($\dfrac{|S| \times (|S|-1)}{2} \times 2$)的，将其转换一下，对于每一个集合设立一个中间点，所有的点 $T_i$ 向其连一条边权为 $W_i$ 的边，和原图实际上是等价的，边数变成了 $2|S|$。</p>
 <p>以样例为例：</p>
 <p><img src="https://i.loli.net/2020/11/22/UpRceOrI4JZdz8H.png" alt="优化前的原图"></p>
 <p><img src="https://i.loli.net/2020/11/22/cztZGfCdMI87rLn.png" alt="优化建图后(6,7为中间点)"></p>
@@ -54,8 +54,8 @@
         <category>题解</category>
       </categories>
       <tags>
-        <tag>数论</tag>
         <tag>数学</tag>
+        <tag>数论</tag>
         <tag>模板</tag>
       </tags>
   </entry>
@@ -1081,8 +1081,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>贪心</tag>
-        <tag>数论</tag>
         <tag>数学</tag>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -1129,8 +1129,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数论</tag>
         <tag>数学</tag>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -1260,8 +1260,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>贪心</tag>
-        <tag>数论</tag>
         <tag>数学</tag>
+        <tag>数论</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
@@ -1577,7 +1577,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P1009 阶乘之和</title>
-    <url>/2020/02/21/lg1009/lg1009/</url>
+    <url>/2020/02/21/lg1009/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
 <p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
 <p>​    提交，Judge，一气呵成。</p>
@@ -1615,7 +1615,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P1009 阶乘之和</title>
-    <url>/2020/02/21/lg1009/</url>
+    <url>/2020/02/21/lg1009/lg1009/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
 <p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
 <p>​    提交，Judge，一气呵成。</p>
