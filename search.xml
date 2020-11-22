@@ -18,7 +18,7 @@
 <li><p>暴力建图，跑 Dijkstra，可以通过前 $50\%$ 的数据</p>
 </li>
 <li><p>对于 $100\%$ 的数据，仍然使用暴力建图并采用优先队列优化的 Dijkstra 就是 $\mathcal{O}(\sum |S^2_i| \log \sum |S^2_i|)$ 的复杂度，不能接受，考虑如何优化建图。</p>
-<p>每个集合中所有点总要两两连边，这样是 $|S^2| - |S|$ 的边数，将其转换一下，对于每一个集合设立一个中间点，所有的点 $T_i$ 向其连一条边权为 $W_i$ 的边，和原图实际上是等价的。</p>
+<p>每个集合中所有点总要两两连边，这样边数是 $|S^2| - |S|$ 的，将其转换一下，对于每一个集合设立一个中间点，所有的点 $T_i$ 向其连一条边权为 $W_i$ 的边，和原图实际上是等价的，边数变成了 $2|S|$。</p>
 <p>以样例为例：</p>
 <p><img src="https://i.loli.net/2020/11/22/UpRceOrI4JZdz8H.png" alt="优化前的原图"></p>
 <p><img src="https://i.loli.net/2020/11/22/cztZGfCdMI87rLn.png" alt="优化建图后(6,7为中间点)"></p>
@@ -218,8 +218,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
         <category>题解</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>线段树</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -496,9 +496,9 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>构造</tag>
         <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
@@ -815,9 +815,9 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>构造</tag>
         <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
@@ -852,8 +852,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>构造</tag>
         <tag>贪心</tag>
+        <tag>构造</tag>
       </tags>
   </entry>
   <entry>
