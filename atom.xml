@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://answerend42.github.io/"/>
-  <updated>2020-11-22T10:49:20.633Z</updated>
+  <updated>2020-11-23T15:02:12.620Z</updated>
   <id>http://answerend42.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>P1156 垃圾陷阱</title>
+    <link href="http://answerend42.github.io/2020/11/23/lg1156/"/>
+    <id>http://answerend42.github.io/2020/11/23/lg1156/</id>
+    <published>2020-11-23T14:28:29.000Z</published>
+    <updated>2020-11-23T15:02:12.620Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>卡门――农夫约翰极其珍视的一条<code>Holsteins</code>奶牛――已经落了到“垃圾井”中。“垃圾井”是农夫们扔垃圾的地方，它的深度为$D(2 \le D \le 100)$英尺。</p><p>卡门想把垃圾堆起来，等到堆得与井同样高时，她就能逃出井外了。另外，卡门可以通过吃一些垃圾来维持自己的生命。</p><p>每个垃圾都可以用来吃或堆放，并且堆放垃圾不用花费卡门的时间。</p><p>假设卡门预先知道了每个垃圾扔下的时间 $t(0&lt; t \le 1000)$，以及每个垃圾堆放的高度 $h(1 \le h \le 25$)和吃进该垃圾能维持生命的时间 $f(1 \le f \le 30)$，要求出卡门最早能逃出井外的时间，假设卡门当前体内有足够持续 $10$ 小时的能量，如果卡门 $10$ 小时内没有进食，卡门就将饿死。</p><h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行为 $2$ 个整数，$D$ 和 $G (1 \le  G \le 100)$，$G$ 为被投入井的垃圾的数量。</p><p>第二到第 $G+1$ 行每行包括$3$个整数：$T (0 &lt; T &lt;= 1000)$，表示垃圾被投进井中的时间；$F (1 \le F  \le 30)$，表示该垃圾能维持卡门生命的时间；和 $H (1 \le  H \le  25)$，该垃圾能垫高的高度。</p><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>如果卡门可以爬出陷阱，输出一个整表示最早什么时候可以爬出；否则输出卡门最长可以存活多长时间。</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这是一道 DP，很像一道背包问题，但是其“不选”的含义变成了吃掉以维持生命。</p><p>设计状态的时候考虑 <code>dp[i][j]</code> 表示第 $i$ 个物品，到高度 $j$ 时生命的最大值</p><p>方程</p><script type="math/tex; mode=display">\begin{align}dp(0,0)&= 10\\dp(i,j)&= \max \{dp(i,j),dp(i-1,j)+f\}\ \ (dp(i-1,j)\ge t) \\dp(i,j)&= \max \{dp(i,j),dp(i-1,j-h)\}\ \ (dp(i-1,j-h) \ge t)\end{align}</script><p>观察到和 $i$ 无关，可以滚动数组压掉一维</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> d, g;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> t, f, h;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> node &amp;nd) <span class="keyword">const</span> &#123; <span class="keyword">return</span> nd.t &gt; t; &#125;</span><br><span class="line">&#125; a[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">105</span>][<span class="number">105</span>];  <span class="comment">// 第 i 个物品，到高度 j 时的最大生命值</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;d, &amp;g);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= g; i++) <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;a[i].t, &amp;a[i].f, &amp;a[i].h);</span><br><span class="line">    sort(a + <span class="number">1</span>, a + <span class="number">1</span> + g);</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= g; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= d; j++) &#123;</span><br><span class="line">            <span class="comment">// 吃掉 dp[i][j] = dp[i - 1][j] + a[i].f;</span></span><br><span class="line">            <span class="comment">// 用掉 dp[i][j] = dp[i-1][j - a[i].h];</span></span><br><span class="line">            <span class="keyword">if</span> (dp[i - <span class="number">1</span>][j] &gt;= a[i].t)</span><br><span class="line">                dp[i][j] = max(dp[i - <span class="number">1</span>][j] + a[i].f, dp[i][j]);</span><br><span class="line">            <span class="keyword">if</span> (dp[i - <span class="number">1</span>][j - a[i].h] &gt;= a[i].t)</span><br><span class="line">                dp[i][j] = max(dp[i - <span class="number">1</span>][j - a[i].h], dp[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> maxh = <span class="number">0</span>, maxt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= g; i++) &#123;</span><br><span class="line">        maxt = max(maxt, dp[i][<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= d; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dp[i][j] - a[i].t &gt;= <span class="number">0</span>) maxh = max(maxh, j);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (maxh == d) <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (maxh == d)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a[i].t);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, maxt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol><li>本题中当前生命为 $0$ 是合法状态，仍可以操作</li><li>本题垃圾以<strong>非时间顺序</strong>给出，要首先排序</li><li>如果不能到达井外，计算高度时要考虑时间（能不能撑到下一个垃圾）</li></ol><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;卡门――农夫约翰极其珍视的一条&lt;code&gt;Holsteins&lt;/code&gt;奶牛――已经落了到“垃圾井”中。“垃圾井”是农夫们
+      
+    
+    </summary>
+    
+    
+      <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+      <category term="动态规划" scheme="http://answerend42.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title>P7100 [w3R1] 团</title>
@@ -66,9 +92,9 @@
       <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="数论" scheme="http://answerend42.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="模板" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
@@ -185,9 +211,9 @@
       <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="线段树" scheme="http://answerend42.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
       <category term="树状数组" scheme="http://answerend42.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="线段树" scheme="http://answerend42.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
     
   </entry>
   
@@ -345,11 +371,11 @@
     
       <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
+      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+      <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
     
   </entry>
   
@@ -401,9 +427,9 @@
       <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="字符串" scheme="http://answerend42.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
@@ -481,9 +507,9 @@
       <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
-    
       <category term="字符串" scheme="http://answerend42.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
       <category term="动态规划" scheme="http://answerend42.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
@@ -569,40 +595,11 @@
     
       <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
-      <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
-    
-      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Codeforces Round 635 (Div. 2)</title>
-    <link href="http://answerend42.github.io/2020/04/24/cf1337/"/>
-    <id>http://answerend42.github.io/2020/04/24/cf1337/</id>
-    <published>2020-04-24T13:13:19.000Z</published>
-    <updated>2020-10-28T05:39:56.456Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>中国场！莫名的激动。题目的风格真的和出题人有关，<del>虽然我只做了三题</del></p></blockquote><a id="more"></a><h2 id="A-Ichihime-and-Triangle"><a href="#A-Ichihime-and-Triangle" class="headerlink" title="A. Ichihime and Triangle"></a><a href="https://codeforces.ml/contest/1337/problem/A" target="_blank" rel="noopener">A. Ichihime and Triangle</a></h2><h3 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a>题意描述</h3><p>给定 $a,b,c,d$ 其中 $a \le b \le c \le d$，试找到 $x,y,z$ 其中 </p><ul><li>$a \leq x \leq b$</li><li>$b \leq y \leq c$</li><li>$c \leq z \leq d$</li></ul><p>使得以 $x,y,z$ 为三角形三边长度构成一个三角形。</p><h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>一开始的朴素思路是</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://codeforces.ml/contest/1337/problem/0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> _,a[<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;_);_;_--) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">1</span>]+a[<span class="number">2</span>]&lt;=a[<span class="number">3</span>]) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[<span class="number">3</span>]-a[<span class="number">2</span>]&lt;=a[<span class="number">2</span>]) <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,a[<span class="number">3</span>]-a[<span class="number">2</span>]+<span class="number">1</span>,a[<span class="number">2</span>],a[<span class="number">3</span>]);</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,a[<span class="number">1</span>],a[<span class="number">3</span>]-a[<span class="number">1</span>]+<span class="number">1</span>,a[<span class="number">3</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,a[<span class="number">1</span>],a[<span class="number">2</span>],a[<span class="number">3</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>但是 $x,y,z \le 5\times 10^8$ 。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://codeforces.ml/contest/1337/problem/0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> _,a[<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;_);_;_--) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,a[<span class="number">2</span>],a[<span class="number">3</span>],a[<span class="number">3</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>构造一组腰长大于边长的等腰三角形就好了。</p><h2 id="B-Kana-and-Dragon-Quest-game"><a href="#B-Kana-and-Dragon-Quest-game" class="headerlink" title="B. Kana and Dragon Quest game"></a><a href="https://codeforces.ml/contest/1337/problem/B" target="_blank" rel="noopener">B. Kana and Dragon Quest game</a></h2><h3 id="题意简述"><a href="#题意简述" class="headerlink" title="题意简述"></a>题意简述</h3><p>一个怪物有 $x$ 的血量，你可以执行最多 $n$ 次操作使得其血量等于 $\left\lfloor \frac{x}{2} \right\rfloor + 10$，也可以执行最多 $m$ 次操作使得其血量等于 $x-10$，问能否杀死它。</p><h3 id="解法-1"><a href="#解法-1" class="headerlink" title="解法"></a>解法</h3><p>想尽办法用第一种方法就行了，再判断剩下的血量能否被击杀</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://codeforces.ml/contest/1337/problem/B</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> _,n,m;</span><br><span class="line"><span class="keyword">double</span> x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;_);_;_--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf%d%d"</span>,&amp;x,&amp;n,&amp;m);</span><br><span class="line">        <span class="keyword">int</span> ansn=<span class="number">0</span>,ansm=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;=m*<span class="number">10</span>) &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(ansn&lt;n) &#123;</span><br><span class="line">            x=<span class="built_in">floor</span>(x/<span class="number">2</span>)+<span class="number">10</span>;</span><br><span class="line">            ansn++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(x&lt;=m*<span class="number">10</span>) <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="C-Linova-and-Kingdom"><a href="#C-Linova-and-Kingdom" class="headerlink" title="C. Linova and Kingdom"></a><a href="https://codeforces.ml/contest/1337/problem/C" target="_blank" rel="noopener">C. Linova and Kingdom</a></h2><h3 id="题意简述-1"><a href="#题意简述-1" class="headerlink" title="题意简述"></a>题意简述</h3><p>给定一棵 $n$ 个节点的树，选择 $k$ 个节点，使得从这些节点出发到根节点经过的非选中的点数量尽可能多，求出最大值。</p><h3 id="解法-2"><a href="#解法-2" class="headerlink" title="解法"></a>解法</h3><p>显而易见的选择 $k$ 个深度最深的点就行了。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">2</span>*<span class="number">100005</span>;</span><br><span class="line"><span class="keyword">int</span> idx,v[maxn*<span class="number">2</span>],first[maxn],nxt[maxn*<span class="number">2</span>],x,y,n,k;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    v[++idx]=y;</span><br><span class="line">    nxt[idx]=first[x];</span><br><span class="line">    first[x]=idx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line"><span class="keyword">int</span> sz,dep;</span><br><span class="line">&#125; a[maxn];</span><br><span class="line">ll ans;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a1,node a2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a1.dep-a1.sz&gt;a2.dep-a2.sz;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">a[u].sz=<span class="number">1</span>,a[u].dep=a[fa].dep+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=first[u];i;i=nxt[i])</span><br><span class="line"><span class="keyword">if</span>(v[i]!=fa)</span><br><span class="line">            dfs(v[i],u),a[u].sz+=a[v[i]].sz;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k);</span><br><span class="line">    a[<span class="number">0</span>].dep=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++)</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x,&amp;y),add(x,y),add(y,x);</span><br><span class="line">dfs(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">    sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++) ans+=a[i].dep-a[i].sz;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="D-Xenia-and-Colorful-Gems"><a href="#D-Xenia-and-Colorful-Gems" class="headerlink" title="D. Xenia and Colorful Gems"></a><a href="https://codeforces.ml/contest/1337/problem/D" target="_blank" rel="noopener">D. Xenia and Colorful Gems</a></h2><p>题目太神仙了，先gugugu</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;中国场！莫名的激动。题目的风格真的和出题人有关，&lt;del&gt;虽然我只做了三题&lt;/del&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
-    
-    
-      <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
-    
-      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
