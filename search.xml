@@ -3,7 +3,8 @@
   <entry>
     <title>P1156 垃圾陷阱</title>
     <url>/2020/11/23/lg1156/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>卡门――农夫约翰极其珍视的一条<code>Holsteins</code>奶牛――已经落了到“垃圾井”中。“垃圾井”是农夫们扔垃圾的地方，它的深度为$D(2 \le D \le 100)$英尺。</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1156" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>卡门――农夫约翰极其珍视的一条<code>Holsteins</code>奶牛――已经落了到“垃圾井”中。“垃圾井”是农夫们扔垃圾的地方，它的深度为$D(2 \le D \le 100)$英尺。</p>
 <p>卡门想把垃圾堆起来，等到堆得与井同样高时，她就能逃出井外了。另外，卡门可以通过吃一些垃圾来维持自己的生命。</p>
 <p>每个垃圾都可以用来吃或堆放，并且堆放垃圾不用花费卡门的时间。</p>
 <p>假设卡门预先知道了每个垃圾扔下的时间 $t(0&lt; t \le 1000)$，以及每个垃圾堆放的高度 $h(1 \le h \le 25$)和吃进该垃圾能维持生命的时间 $f(1 \le f \le 30)$，要求出卡门最早能逃出井外的时间，假设卡门当前体内有足够持续 $10$ 小时的能量，如果卡门 $10$ 小时内没有进食，卡门就将饿死。</p>
@@ -74,7 +75,8 @@ dp(i,j)&= \max \{dp(i,j),dp(i-1,j-h)\}\ \ (dp(i-1,j-h) \ge t)
   <entry>
     <title>P1226 【模板】快速幂||取余运算</title>
     <url>/2020/11/21/lg1226/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你三个整数 $b,p,k$，求 $b^p \bmod k$。</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1226" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你三个整数 $b,p,k$，求 $b^p \bmod k$。</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入只有一行三个整数，分别代表 $b,p,k$</p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行一个字符串 <code>b^p mod k=s</code>，其中 $b, p, k$($0 \le b,p &lt; 2^{31},1 \le k \le 2^{31}$) 分别为题目给定的值，$s$ 为运算结果。</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>如此巨大的数据，当然不能直接暴力，考虑幂次方的性质，要求 $a^4$ 相当于求出 ${a^2}^2$，以此类推，对 $b$ 作二进制分解，只用求出二进制位上为 $1$ 的位之积就是答案</p>
@@ -95,7 +97,8 @@ dp(i,j)&= \max \{dp(i,j),dp(i-1,j-h)\}\ \ (dp(i-1,j-h) \ge t)
   <entry>
     <title>P2831 愤怒的小鸟</title>
     <url>/2020/11/15/lg2831/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><code>Kiana</code> 最近沉迷于一款神奇的游戏无法自拔。</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P2831" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><code>Kiana</code> 最近沉迷于一款神奇的游戏无法自拔。</p>
 <p>简单来说，这款游戏是在一个平面上进行的。</p>
 <p>有一架弹弓位于 $(0,0)$ 处，每次 <code>Kiana</code> 可以用它向第一象限发射一只红色的小鸟，小鸟们的飞行轨迹均为形如 $y=ax^2+bx$ 的曲线，其中 $a,b$ 是 <code>Kiana</code> 指定的参数，且必须满足 $a &lt; 0$，$a,b$ 都是实数。</p>
 <p>当小鸟落回地面（即 $x$ 轴）时，它就会瞬间消失。</p>
@@ -146,7 +149,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
   <entry>
     <title>P4513 小白逛公园</title>
     <url>/2020/11/12/lg4513/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在小新家附近有一条“公园路”，路的一边从南到北依次排着 $n$ 个公园，小白早就看花了眼，自己也不清楚该去哪些公园玩了。  </p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P4513" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在小新家附近有一条“公园路”，路的一边从南到北依次排着 $n$ 个公园，小白早就看花了眼，自己也不清楚该去哪些公园玩了。  </p>
 <p>一开始，小白就根据公园的风景给每个公园打了分-.-。小新为了省事，每次遛狗的时候都会事先规定一个范围，小白只可以选择第 $a$ 个和第 $b$ 个公园之间（包括 $a$、$b$ 两个公园）选择连续的一些公园玩。小白当然希望选出的公园的分数总和尽量高咯。同时，由于一些公园的景观会有所改变，所以，小白的打分也可能会有一些变化。  </p>
 <p>那么，就请你来帮小白选择公园吧。</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p> 第一行，两个整数 $N$ 和 $M$，分别表示表示公园的数量和操作（遛狗或者改变打分）总数。<br>    接下来 $N$ 行，每行一个整数，依次给出小白 开始时对公园的打分。<br>    接下来 $M$ 行，每行三个整数。第一个整数 $K$，$1$ 或 $2$。</p>
@@ -190,7 +194,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
   <entry>
     <title>P1160 队列安排</title>
     <url>/2020/11/12/lg1160/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一个学校里老师要将班上 $N$ 个同学排成一列，同学被编号为 $ 1 \sim N$，他采取如下的方法：</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1160" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一个学校里老师要将班上 $N$ 个同学排成一列，同学被编号为 $ 1 \sim N$，他采取如下的方法：</p>
 <ol>
 <li>先将 $1$ 号同学安排进队列，这时队列中只有他一个人；</li>
 <li>$2 \sim N$ 号同学依次入列，编号为 $i$ 的同学入列方式为：老师指定编号为 $i$ 的同学站在编号为 $1\sim (i -1)$ 中某位同学（即之前已经入列的同学）的左边或右边；</li>
@@ -219,7 +224,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
   <entry>
     <title>P1816 忠诚</title>
     <url>/2020/11/12/lg1816/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>老管家是一个聪明能干的人。他为财主工作了整整 $10$ 年，财主为了让自已账目更加清楚。要求管家每天记 $k$ 次账，由于管家聪明能干，因而管家总是让财主十分满意。但是由于一些人的挑拨，财主还是对管家产生了怀疑。于是他决定用一种特别的方法来判断管家的忠诚，他把每次的账目按 $1,2,3 \cdots$ 编号，然后不定时的问管家问题，问题是这样的：在 $a$ 到 $b$ 号账中最少的一笔是多少？为了让管家没时间作假他总是一次问多个问题。</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1816" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>老管家是一个聪明能干的人。他为财主工作了整整 $10$ 年，财主为了让自已账目更加清楚。要求管家每天记 $k$ 次账，由于管家聪明能干，因而管家总是让财主十分满意。但是由于一些人的挑拨，财主还是对管家产生了怀疑。于是他决定用一种特别的方法来判断管家的忠诚，他把每次的账目按 $1,2,3 \cdots$ 编号，然后不定时的问管家问题，问题是这样的：在 $a$ 到 $b$ 号账中最少的一笔是多少？为了让管家没时间作假他总是一次问多个问题。</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入中第一行有两个数 $m,n$ 表示有 $m$($m \le 10^5$)笔账,$n$ 表示有 $n$ 个问题，$n \le 10^5$。</p>
 <p>第二行为 $m$ 个数,分别是账目的钱数</p>
 <p>后面 $n$ 行分别是 $n$ 个问题,每行有 $2$ 个数字说明开始结束的账目编号。</p>
@@ -251,27 +257,28 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
         <category>题解</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>线段树</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
     <title>P3368 【模板】树状数组 2</title>
     <url>/2020/11/12/lg3368/</url>
-    <content><![CDATA[<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如题，已知一个数列，你需要进行下面两种操作：</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P3368" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如题，已知一个数列，你需要进行下面两种操作：</p>
 <ol>
 <li>将某区间每一个数数加上 $x$；</li>
 <li>求出某一个数的值。</li>
 </ol>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含两个整数 $N$、$M$($1 \le N,M \le 5 \times 10^5$)，分别表示该数列数字的个数和操作的总个数。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包含两个整数 $N$、$M$($1 \le N,M \le 5 \times 10^5$)，分别表示该数列数字的个数和操作的总个数。</p>
 <p>第二行包含 $N$ 个用空格分隔的整数，其中第 $i$ 个数字表示数列第 $i$ 项的初始值。</p>
 <p>接下来 $M$ 行每行包含 $2$ 或 $4$ 个整数，表示一个操作，具体如下：</p>
 <p>操作 $1$： 格式：<code>1 x y k</code> 含义：将区间 $[x,y]$ 内每个数加上 $k$；</p>
 <p>操作 $2$： 格式：<code>2 x</code> 含义：输出第 $x$ 个数的值。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出包含若干行整数，即为所有操作 $2$ 的结果。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>树状数组区间修改单点查询模板题，暂无</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> t[N], x, y, k, op, n, m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; x &lt;= n; x += x &amp; -x) t[x] += k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">res</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (; x; x -= x &amp; -x) res += t[x];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; x, add(i, x - y), y = x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; k, add(x, k), add(y + <span class="number">1</span>, -k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x, <span class="built_in">cout</span> &lt;&lt; ask(x) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出包含若干行整数，即为所有操作 $2$ 的结果。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>树状数组区间修改单点查询模板题，暂无</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> t[N], x, y, k, op, n, m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; x &lt;= n; x += x &amp; -x) t[x] += k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">res</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (; x; x -= x &amp; -x) res += t[x];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; x, add(i, x - y), y = x;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y &gt;&gt; k, add(x, k), add(y + <span class="number">1</span>, -k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; x, <span class="built_in">cout</span> &lt;&lt; ask(x) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
 <li>差分查询插入时要注意</li>
 </ol>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
@@ -286,21 +293,22 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
   <entry>
     <title>P3374 【模板】树状数组 1</title>
     <url>/2020/11/12/lg3374/</url>
-    <content><![CDATA[<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>如题，已知一个数列，你需要进行下面两种操作：</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P3374" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如题，已知一个数列，你需要进行下面两种操作：</p>
 <ul>
 <li>将某一个数加上 $x$</li>
 <li>求出某区间每一个数的和</li>
 </ul>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行包含两个正整数 $n,m$($1 \le n,m \le 5 \times 10^5$)，分别表示该数列数字的个数和操作的总个数。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包含两个正整数 $n,m$($1 \le n,m \le 5 \times 10^5$)，分别表示该数列数字的个数和操作的总个数。</p>
 <p>第二行包含 $n$ 个用空格分隔的整数，其中第 $i$ 个数字表示数列第 $i$ 项的初始值。</p>
 <p>接下来 $m$ 行每行包含 $3$ 个整数，表示一个操作，具体如下：</p>
 <ul>
 <li><code>1 x k</code> 含义：将第 $x$ 个数加上 $k$</li>
 <li><code>2 x y</code> 含义：输出区间 $[x,y]$ 内每个数的和</li>
 </ul>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出包含若干行整数，即为所有操作 $2$ 的结果。</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>树状数组单点修改区间查询模板题，暂无</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> t[N], op, x, y, n, m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; x &lt;= n; x += x &amp; -x) t[x] += k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">res</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (; x; x -= x &amp; -x) res += t[x];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; x, add(i, x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>)</span><br><span class="line">            add(x, y);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ask(y) - ask(x - <span class="number">1</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出包含若干行整数，即为所有操作 $2$ 的结果。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>树状数组单点修改区间查询模板题，暂无</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> t[N], op, x, y, n, m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (; x &lt;= n; x += x &amp; -x) t[x] += k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">res</span><span class="params">(<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (; x; x -= x &amp; -x) res += t[x];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">cin</span> &gt;&gt; x, add(i, x);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; op &gt;&gt; x &gt;&gt; y;</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="number">1</span>)</span><br><span class="line">            add(x, y);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ask(y) - ask(x - <span class="number">1</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
 <li>前缀和查询是 $r$ 和 $l-1$</li>
 </ol>
@@ -316,7 +324,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
   <entry>
     <title>P1106 删数问题</title>
     <url>/2020/11/12/lg1106/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>键盘输入一个高精度的正整数 $N$（不超过 $250$ 位），去掉其中任意 $k$ 个数字后剩下的数字按原左右次序将组成一个新的非负整数。编程对给定的 $N$ 和 $k$，寻找一种方案使得剩下的数字组成的新数最小。</p>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/P1106" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>键盘输入一个高精度的正整数 $N$（不超过 $250$ 位），去掉其中任意 $k$ 个数字后剩下的数字按原左右次序将组成一个新的非负整数。编程对给定的 $N$ 和 $k$，寻找一种方案使得剩下的数字组成的新数最小。</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>$n$（高精度的正整数 )。</p>
 <p>$k$（需要删除的数字个数 )。</p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>最后剩下的最小数。</p>
@@ -529,9 +538,9 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数学</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -848,9 +857,9 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>数学</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -885,8 +894,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -1114,8 +1123,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -1293,8 +1302,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>数学</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
@@ -1610,7 +1619,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P1009 阶乘之和</title>
-    <url>/2020/02/21/lg1009/lg1009/</url>
+    <url>/2020/02/21/lg1009/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
 <p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
 <p>​    提交，Judge，一气呵成。</p>
@@ -1648,7 +1657,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P1009 阶乘之和</title>
-    <url>/2020/02/21/lg1009/</url>
+    <url>/2020/02/21/lg1009/lg1009/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
 <p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
 <p>​    提交，Judge，一气呵成。</p>
