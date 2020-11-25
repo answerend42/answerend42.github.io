@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>loj2757</title>
+    <title>「JOI 2014 Final」IOI 馒头</title>
     <url>/2020/11/25/loj2757/</url>
     <content><![CDATA[<p><a href="https://loj.ac/p/2757" target="_blank" rel="noopener">题目链接</a></p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><ul>
@@ -55,8 +55,8 @@
         <category>题解</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>动态规划</tag>
+        <tag>贪心</tag>
         <tag>背包DP</tag>
       </tags>
   </entry>
@@ -201,8 +201,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
       </categories>
       <tags>
         <tag>动态规划</tag>
-        <tag>广度优先搜索bfs</tag>
         <tag>状压DP</tag>
+        <tag>广度优先搜索bfs</tag>
         <tag>记忆化搜索</tag>
       </tags>
   </entry>
@@ -597,10 +597,10 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
         <category>比赛</category>
       </categories>
       <tags>
-        <tag>数学</tag>
         <tag>模拟</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -642,8 +642,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
         <category>题解</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>字符串</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -750,16 +750,16 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
         <category>比赛</category>
       </categories>
       <tags>
-        <tag>数论</tag>
+        <tag>字符串</tag>
         <tag>模拟</tag>
         <tag>动态规划</tag>
-        <tag>广度优先搜索bfs</tag>
-        <tag>字符串</tag>
         <tag>区间DP</tag>
         <tag>状压DP</tag>
+        <tag>数论</tag>
         <tag>高精度</tag>
         <tag>最小生成树</tag>
         <tag>图论</tag>
+        <tag>广度优先搜索bfs</tag>
       </tags>
   </entry>
   <entry>
@@ -916,10 +916,10 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
         <category>比赛</category>
       </categories>
       <tags>
-        <tag>数学</tag>
         <tag>模拟</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -954,8 +954,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       </categories>
       <tags>
         <tag>模拟</tag>
-        <tag>贪心</tag>
         <tag>构造</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -1181,10 +1181,10 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
         <category>比赛</category>
       </categories>
       <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
         <tag>模拟</tag>
+        <tag>数论</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -1230,9 +1230,9 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
         <category>题解</category>
       </categories>
       <tags>
+        <tag>模拟</tag>
         <tag>数论</tag>
         <tag>数学</tag>
-        <tag>模拟</tag>
       </tags>
   </entry>
   <entry>
@@ -1360,10 +1360,10 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
         <category>比赛</category>
       </categories>
       <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
         <tag>模拟</tag>
+        <tag>数论</tag>
         <tag>贪心</tag>
+        <tag>数学</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
@@ -1459,8 +1459,8 @@ b_{x,y}=b_{x-1,y}+b_{x,y-1}-b_{x-1,y-1}+a_{x,y}</script><h3 id="如何使用"><a
         <category>题解</category>
       </categories>
       <tags>
-        <tag>搜索</tag>
         <tag>广度优先搜索bfs</tag>
+        <tag>搜索</tag>
       </tags>
   </entry>
   <entry>
@@ -1679,7 +1679,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P1009 阶乘之和</title>
-    <url>/2020/02/21/lg1009/</url>
+    <url>/2020/02/21/lg1009/lg1009/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
 <p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
 <p>​    提交，Judge，一气呵成。</p>
@@ -1717,7 +1717,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P1009 阶乘之和</title>
-    <url>/2020/02/21/lg1009/lg1009/</url>
+    <url>/2020/02/21/lg1009/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
 <p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
 <p>​    提交，Judge，一气呵成。</p>

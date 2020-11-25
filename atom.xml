@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://answerend42.github.io/"/>
-  <updated>2020-11-25T15:59:40.062Z</updated>
+  <updated>2020-11-25T16:01:21.940Z</updated>
   <id>http://answerend42.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>loj2757</title>
+    <title>「JOI 2014 Final」IOI 馒头</title>
     <link href="http://answerend42.github.io/2020/11/25/loj2757/"/>
     <id>http://answerend42.github.io/2020/11/25/loj2757/</id>
     <published>2020-11-25T15:35:18.000Z</published>
-    <updated>2020-11-25T15:59:40.062Z</updated>
+    <updated>2020-11-25T16:01:21.940Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://loj.ac/p/2757" target="_blank" rel="noopener">题目链接</a></p><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><ul><li><p>有 $M$ 种互不相同的馒头各一个，第 $i$ 个馒头卖 $p_i$ 元。</p><p>有 $N$ 个包装盒，第 $j$ 个包装盒最多能装 $C_j$ 个馒头，买第 $j$ 个包装盒的花费为 $E_j$ 元。要求只能将一些馒头放进包装盒中打包出售，不能零售，当然也可以不出售某些馒头。售出一盒馒头得到的利润为盒内所有馒头的价格减去包装盒的价格。</p><p>现在买下（这 $N$ 个包装盒）其中的一些包装盒（也可以不买，还可以全买），将馒头打包出售，求最大可能利润。</p></li></ul><h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行两个正整数 $M,N$，意义如题目描述；<br>接下来 $M$ 行，每行一个正整数 $P_i$，表示第 $i$ 个馒头的价格；<br>接下来 $N$ 行，每行两个正整数 $C_j,E_j$，表示第 $j$ 个包装盒最多能装 $C_j$个馒头，花费 $E_j$ 元。</p><p>对于全部数据，$1 \le M \le 10^4, 1 \le N\le 500, 1 \le P_i,C_j,E_j \le 10^4$。</p><p>详细子任务及数据满足条件如下表：</p><div class="table-container"><table><thead><tr><th style="text-align:center">Subtask</th><th style="text-align:center">追加限制</th><th style="text-align:center">分值</th></tr></thead><tbody><tr><td style="text-align:center">$1$</td><td style="text-align:center">$N \le 10$</td><td style="text-align:center">$25$</td></tr><tr><td style="text-align:center">$2$</td><td style="text-align:center">$C_j \le 10$</td><td style="text-align:center">$35$</td></tr><tr><td style="text-align:center">$3$</td><td style="text-align:center">无追加限制</td><td style="text-align:center">$45$</td></tr></tbody></table></div><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一行一个整数，表示最大可能利润。</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>贪心的想，既然要求最大利润，应当保证所选的包装盒内装的馒头全部为尽可能售出价格更高的馒头。</p><p>问题转换成恰有 $\sum C_j$ 个馒头可装时花费 $\sum E_j$ 的最小值（因为卖出的最大值已经确定了）</p><p>这是一个典型的背包模型</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span> + <span class="number">5</span>, inf = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> m, n;</span><br><span class="line"><span class="keyword">int</span> p[N], d[N];</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="keyword">int</span> dp[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> c, e;</span><br><span class="line">&#125; e[<span class="number">505</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;m, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;p[i]), d[i] = d[i - <span class="number">1</span>] + p[i], dp[i] = inf;</span><br><span class="line">    sort(p + <span class="number">1</span>, p + <span class="number">1</span> + m, greater&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) d[i] = d[i - <span class="number">1</span>] + p[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;e[i].c, &amp;e[i].e);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = m; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            dp[j] = min(dp[j], dp[max(<span class="number">0</span>, j - e[i].c)] + e[i].e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= m; i++) ans = max(ans, d[i] - dp[i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol><li>注意转移的时候方程应该是 $dp(j) = \min {dp(j), dp(j - C)}$，但有可能 $j &lt; C$ 从而访问负数下标，因此是 $dp(j) = \min {dp(j), dp(\max{0,j - C})}$ 从实际意义来谈，也不可能选取负数个馒头</li><li>求最小值初始化为最大值</li></ol><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
     
@@ -39,9 +39,9 @@
       <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="动态规划" scheme="http://answerend42.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="背包DP" scheme="http://answerend42.github.io/tags/%E8%83%8C%E5%8C%85DP/"/>
     
@@ -157,9 +157,9 @@
     
       <category term="动态规划" scheme="http://answerend42.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="广度优先搜索bfs" scheme="http://answerend42.github.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2bfs/"/>
-    
       <category term="状压DP" scheme="http://answerend42.github.io/tags/%E7%8A%B6%E5%8E%8BDP/"/>
+    
+      <category term="广度优先搜索bfs" scheme="http://answerend42.github.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2bfs/"/>
     
       <category term="记忆化搜索" scheme="http://answerend42.github.io/tags/%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/"/>
     
@@ -399,13 +399,13 @@
       <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+      <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
     
       <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="构造" scheme="http://answerend42.github.io/tags/%E6%9E%84%E9%80%A0/"/>
+      <category term="数学" scheme="http://answerend42.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -457,9 +457,9 @@
       <category term="题解" scheme="http://answerend42.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="字符串" scheme="http://answerend42.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="贪心" scheme="http://answerend42.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
@@ -537,25 +537,25 @@
       <category term="比赛" scheme="http://answerend42.github.io/categories/%E6%AF%94%E8%B5%9B/"/>
     
     
-      <category term="数论" scheme="http://answerend42.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
+      <category term="字符串" scheme="http://answerend42.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
       <category term="模拟" scheme="http://answerend42.github.io/tags/%E6%A8%A1%E6%8B%9F/"/>
     
       <category term="动态规划" scheme="http://answerend42.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="广度优先搜索bfs" scheme="http://answerend42.github.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2bfs/"/>
-    
-      <category term="字符串" scheme="http://answerend42.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
       <category term="区间DP" scheme="http://answerend42.github.io/tags/%E5%8C%BA%E9%97%B4DP/"/>
     
       <category term="状压DP" scheme="http://answerend42.github.io/tags/%E7%8A%B6%E5%8E%8BDP/"/>
+    
+      <category term="数论" scheme="http://answerend42.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
       <category term="高精度" scheme="http://answerend42.github.io/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
     
       <category term="最小生成树" scheme="http://answerend42.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
     
       <category term="图论" scheme="http://answerend42.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="广度优先搜索bfs" scheme="http://answerend42.github.io/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2bfs/"/>
     
   </entry>
   
