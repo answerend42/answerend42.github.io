@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>二分图汇总</title>
+    <url>/2020/11/28/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%B1%87%E6%80%BB/</url>
+    <content><![CDATA[<object data="./二分图汇总.pdf" type="application/pdf" width="100%" height="900px"></object>
+
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>记录</category>
+      </categories>
+      <tags>
+        <tag>图论</tag>
+        <tag>二分图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>「JOI 2014 Final」IOI 馒头</title>
     <url>/2020/11/25/loj2757/</url>
     <content><![CDATA[<p><a href="https://loj.ac/p/2757" target="_blank" rel="noopener">题目链接</a></p>
 <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><ul>
-<li><p>有 $M$ 种互不相同的馒头各一个，第 $i$ 个馒头卖 $p_i$ 元。</p>
+<li><p>有 $M$ 种互不相同的馒头各一个，第 $i$ 个馒头卖 $P_i$ 元。</p>
 <p>有 $N$ 个包装盒，第 $j$ 个包装盒最多能装 $C_j$ 个馒头，买第 $j$ 个包装盒的花费为 $E_j$ 元。要求只能将一些馒头放进包装盒中打包出售，不能零售，当然也可以不出售某些馒头。售出一盒馒头得到的利润为盒内所有馒头的价格减去包装盒的价格。</p>
 <p>现在买下（这 $N$ 个包装盒）其中的一些包装盒（也可以不买，还可以全买），将馒头打包出售，求最大可能利润。</p>
 </li>
 </ul>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行两个正整数 $M,N$，意义如题目描述；<br>接下来 $M$ 行，每行一个正整数 $P_i$，表示第 $i$ 个馒头的价格；<br>接下来 $N$ 行，每行两个正整数 $C_j,E_j$，表示第 $j$ 个包装盒最多能装 $C_j$个馒头，花费 $E_j$ 元。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行两个正整数 $M,N$，意义如题目描述；<br>接下来 $M$ 行，每行一个正整数  $P_i$，表示第 $i$ 个馒头的价格；<br>接下来 $N$ 行，每行两个正整数 $C_j,E_j$，表示第 $j$ 个包装盒最多能装 $C_j$个馒头，花费 $E_j$ 元。</p>
 <p>对于全部数据，$1 \le M \le 10^4, 1 \le N\le 500, 1 \le P_i,C_j,E_j \le 10^4$。</p>
 <p>详细子任务及数据满足条件如下表：</p>
 <div class="table-container">
@@ -292,6 +306,7 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出文件中为每个问题的答案。</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>当然可以用线段树来维护，但是这里选择树状数组会更加精炼</p>
 <p>当然，树状数组也有其弊端，对于没有被包含的单个节点，就需要一个一个比较了……<span style="color:red">这会大大降低效率！</span> </p>
+<p>upd: ST 表（这个会快很多，重点在于没有修改）</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div class='spoiler collapsed'>
     <div class='spoiler-title'>
         树状数组
@@ -309,6 +324,15 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
 
     </div>
 </div>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        ST 表
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lg2</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> result = <span class="number">0</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &amp; <span class="number">0xffff0000</span>) result += <span class="number">16</span>, n &gt;&gt;= <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">if</span> (n &amp; <span class="number">0x0000ff00</span>) result += <span class="number">8</span>, n &gt;&gt;= <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">if</span> (n &amp; <span class="number">0x000000f0</span>) result += <span class="number">4</span>, n &gt;&gt;= <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">if</span> (n &amp; <span class="number">0x0000000c</span>) result += <span class="number">2</span>, n &gt;&gt;= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (n &amp; <span class="number">0x00000002</span>) result += <span class="number">1</span>, n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, f[<span class="number">25</span>][N], l, r;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">getcha</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">char</span> buf[<span class="number">100000</span>], *p1 = buf, *p2 = buf;</span><br><span class="line">    <span class="keyword">return</span> p1 == p2 &amp;&amp; (p2 = (p1 = buf) + fread(buf, <span class="number">1</span>, <span class="number">100000</span>, <span class="built_in">stdin</span>), p1 == p2) ? EOF : *p1++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ch = getcha();</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -f;</span><br><span class="line">        ch = getcha();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">        ret = (ret &lt;&lt; <span class="number">1</span>) + (ret &lt;&lt; <span class="number">3</span>) + ch - <span class="string">'0'</span>;</span><br><span class="line">        ch = getcha();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret * f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">char</span> pbuf[<span class="number">100000</span>], *pp = pbuf;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (pp - pbuf == <span class="number">100000</span>)</span><br><span class="line">        fwrite(pbuf, <span class="number">1</span>, <span class="number">100000</span>, <span class="built_in">stdout</span>), pp = pbuf;</span><br><span class="line">    *pp++ = c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> sta[<span class="number">35</span>];</span><br><span class="line">    <span class="keyword">int</span> top = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        sta[top++] = x % <span class="number">10</span>, x /= <span class="number">10</span>;</span><br><span class="line">    &#125; <span class="keyword">while</span> (x);</span><br><span class="line">    <span class="keyword">while</span> (top) push(sta[--top] + <span class="string">'0'</span>);</span><br><span class="line">    push(<span class="string">' '</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(), m = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) f[<span class="number">0</span>][i] = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">21</span>; j++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++) f[j][i] = min(f[j - <span class="number">1</span>][i], f[j - <span class="number">1</span>][i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        l = read(), r = read();</span><br><span class="line">        <span class="keyword">int</span> s = lg2(r - l + <span class="number">1</span>);</span><br><span class="line">        write(min(f[s][l], f[s][r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">    fwrite(pbuf, <span class="number">1</span>, pp - pbuf, <span class="built_in">stdout</span>);</span><br><span class="line">    pp = pbuf;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+</div>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
 <li>要初始化为最大值</li>
 </ol>
@@ -319,6 +343,7 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
       <tags>
         <tag>线段树</tag>
         <tag>树状数组</tag>
+        <tag>RMQ</tag>
       </tags>
   </entry>
   <entry>
@@ -519,9 +544,9 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
       <tags>
         <tag>图论</tag>
         <tag>最近公共祖先</tag>
+        <tag>二分图</tag>
         <tag>网络流</tag>
         <tag>倍增</tag>
-        <tag>二分图</tag>
         <tag>重链剖分</tag>
       </tags>
   </entry>
@@ -599,8 +624,8 @@ b = \dfrac{x_2^2y_1 - x_1^2y_1}{x_1x_2(x_2 - x_1)}</script><p>用二进制表示
       <tags>
         <tag>模拟</tag>
         <tag>构造</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -918,8 +943,8 @@ S(n,m)=\begin {Bmatrix} n \\ m\end {Bmatrix}={\frac 1 {m!}}\sum_{k=0}^m (-1)^k\b
       <tags>
         <tag>模拟</tag>
         <tag>构造</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -1183,8 +1208,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -1362,8 +1387,8 @@ x_1-x_2 \leq c \Leftrightarrow  x_1-x_2 \geq -c \Leftrightarrow x_1-x_2 < c+1 \L
       <tags>
         <tag>模拟</tag>
         <tag>数论</tag>
-        <tag>贪心</tag>
         <tag>数学</tag>
+        <tag>贪心</tag>
         <tag>奇偶性</tag>
       </tags>
   </entry>
@@ -1679,7 +1704,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P1009 阶乘之和</title>
-    <url>/2020/02/21/lg1009/lg1009/</url>
+    <url>/2020/02/21/lg1009/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
 <p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
 <p>​    提交，Judge，一气呵成。</p>
@@ -1717,7 +1742,7 @@ f(i,j)=f(f(i,j-1),j-1)</script><p>​    于是，我们预处理 f 数组，并
   </entry>
   <entry>
     <title>P1009 阶乘之和</title>
-    <url>/2020/02/21/lg1009/</url>
+    <url>/2020/02/21/lg1009/lg1009/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在洛谷上刷题时遇见这么一道题 <a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">P1009 阶乘之和</a> ，题面简单好理解，适合和我一样菜的 OIer。二话不说，我抄起手中一把梭。</p>
 <p><img src="https://i.loli.net/2020/02/25/jkrEdNQLntsaIbR.gif" alt=""></p>
 <p>​    提交，Judge，一气呵成。</p>
