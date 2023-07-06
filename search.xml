@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>UVA11572 唯一的雪花 Unique Snowflakes</title>
+    <url>/2023/07/06/uva11572/</url>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/problem/UVA11572" target="_blank" rel="noopener">题目链接</a></p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>企业家 Emily 有一个很酷的主意：把雪花包起来卖。她发明了一台机器，这台机器可以捕捉飘落的雪花，并把它们一片一片打包进一个包裹里。一旦这个包裹满了，它就会被封上送去发售。</p>
+<p>Emily 的公司的口号是“把独特打包起来”，为了实现这一诺言，一个包裹里不能有两片一样的雪花。不幸的是，这并不容易做到，因为实际上通过机器的雪花中有很多是相同的。Emily 想知道这样一个不包含两片一样的雪花的包裹最大能有多大，她可以在任何时候启动机器，但是一旦机器启动了，直到包裹被封上为止，所有通过机器的雪花都必须被打包进这个包裹里，当然，包裹可以在任何时候被封上。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行是测试数据组数 $T$，对于每一组数据，第一行是通过机器的雪花总数 $n$（$n \le {10}^6$），下面 $n$ 行每行一个在 $[0, {10}^9]$ 内的整数，标记了这片雪花，当两片雪花标记相同时，这两片雪花是一样的。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对于每一组数据，输出最大包裹的大小。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>模拟一个滑动窗口的左端、右端，通过去重取均不重复区间的长度最大值</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> t, n, a[N];</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; cnt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">        cnt.clear();</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">1</span>, r = <span class="number">1</span>, rep = <span class="number">0</span>;</span><br><span class="line">        cnt[a[<span class="number">1</span>]] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r &amp;&amp; r &lt;= n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (rep == <span class="number">0</span>) &#123;</span><br><span class="line">                ans = max(ans, r - l + <span class="number">1</span>);</span><br><span class="line">                r++;</span><br><span class="line">                cnt[a[r]]++;</span><br><span class="line">                <span class="keyword">if</span> (cnt[a[r]] &gt; <span class="number">1</span>)</span><br><span class="line">                    rep++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                cnt[a[l]]--;</span><br><span class="line">                <span class="keyword">if</span> (cnt[a[l]] == <span class="number">1</span>)</span><br><span class="line">                    rep--;</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>多测记得换行</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>双指针</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二分图汇总</title>
     <url>/2020/11/28/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%B1%87%E6%80%BB/</url>
     <content><![CDATA[<object data="./二分图汇总.pdf" type="application/pdf" width="100%" height="900px"></object>
